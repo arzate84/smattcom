@@ -1,0 +1,7000 @@
+/*-----------------------------------------------------------------------------------
+	    pagina web smattcom
+        Built with Blocs
+-----------------------------------------------------------------------------------*/
+ 
+body{
+	margin:0;
+	padding:0;
+    background:#FFFFFF;
+    overflow-x:hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.page-container{overflow-x:hidden;} /* Prevents unwanted scroll space when scroll FX used. */
+a,button{transition: background .3s ease-in-out;outline: none!important;} /* Prevent ugly blue glow on chrome and safari */
+a:hover{text-decoration: none; cursor:pointer;}
+
+
+/* Preloader */
+
+.page-preloader{position: fixed;top: 0;bottom: 0;width: 100%;z-index:100000;background:#FFFFFF url("img/pageload-spinner.gif") no-repeat center center;}
+
+/* = Blocs
+-------------------------------------------------------------- */
+
+.bloc{
+	width:100%;
+	clear:both;
+	background: 50% 50% no-repeat;
+	padding:0 50px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position:relative;
+	display:flex;
+}
+.bloc .container{
+	padding-left:0;
+	padding-right:0;
+}
+
+
+/* Sizes */
+
+.bloc-xl{
+	padding:150px 50px;
+}
+.bloc-lg{
+	padding:100px 50px;
+}
+.bloc-md{
+	padding:50px;
+}
+.bloc-sm{
+	padding:20px 50px;
+}
+
+/* = Full Screen Blocs 
+-------------------------------------------------------------- */
+
+.bloc-fill-screen{
+	min-height:100vh;
+	display: flex;
+	flex-direction: column;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.bloc-fill-screen > .container{
+	align-self: flex-middle;
+	flex-grow: 1;
+	display: flex;
+}
+.bloc-fill-screen > .container > .row{
+	flex-grow: 1;
+	align-self: center;
+	width:100%;
+}
+.bloc-fill-screen .fill-bloc-top-edge, .bloc-fill-screen .fill-bloc-bottom-edge{
+	flex-grow: 0;
+}
+.bloc-fill-screen .fill-bloc-top-edge{
+	align-self: flex-start;
+}
+.bloc-fill-screen .fill-bloc-bottom-edge{
+	align-self: flex-end;
+}
+
+
+/* Background Effects */
+
+.b-parallax{
+	background-attachment:fixed;
+}
+
+/* Disable Parallax on Mobile Touch Devices */
+@media (hover: none) {
+	.b-parallax{
+	background-attachment:scroll;
+}
+}
+
+/* Dark theme */
+
+.d-bloc{
+	color:rgba(255,255,255,.7);
+}
+.d-bloc button:hover{
+	color:rgba(255,255,255,.9);
+}
+.d-bloc .icon-round,.d-bloc .icon-square,.d-bloc .icon-rounded,.d-bloc .icon-semi-rounded-a,.d-bloc .icon-semi-rounded-b{
+	border-color:rgba(255,255,255,.9);
+}
+.d-bloc .divider-h span{
+	border-color:rgba(255,255,255,.2);
+}
+.d-bloc .a-btn,.d-bloc .navbar a, .d-bloc a .icon-sm, .d-bloc a .icon-md, .d-bloc a .icon-lg, .d-bloc a .icon-xl, .d-bloc h1 a, .d-bloc h2 a, .d-bloc h3 a, .d-bloc h4 a, .d-bloc h5 a, .d-bloc h6 a, .d-bloc p a{
+	color:rgba(255,255,255,.6);
+}
+.d-bloc .a-btn:hover,.d-bloc .navbar a:hover,.d-bloc a:hover .icon-sm, .d-bloc a:hover .icon-md, .d-bloc a:hover .icon-lg, .d-bloc a:hover .icon-xl, .d-bloc h1 a:hover, .d-bloc h2 a:hover, .d-bloc h3 a:hover, .d-bloc h4 a:hover, .d-bloc h5 a:hover, .d-bloc h6 a:hover, .d-bloc p a:hover{
+	color:rgba(255,255,255,1);
+}
+.d-bloc .navbar-toggle .icon-bar{
+	background:rgba(255,255,255,1);
+}
+.d-bloc .btn-wire,.d-bloc .btn-wire:hover{
+	color:rgba(255,255,255,1);
+	border-color:rgba(255,255,255,1);
+}
+.d-bloc .card{
+	color:rgba(0,0,0,.5);
+}
+.d-bloc .card button:hover{
+	color:rgba(0,0,0,.7);
+}
+.d-bloc .card icon{
+	border-color:rgba(0,0,0,.7);
+}
+.d-bloc .card .divider-h span{
+	border-color:rgba(0,0,0,.1);
+}
+.d-bloc .card .a-btn{
+	color:rgba(0,0,0,.6);
+}
+.d-bloc .card .a-btn:hover{
+	color:rgba(0,0,0,1);
+}
+.d-bloc .card .btn-wire, .d-bloc .card .btn-wire:hover{
+	color:rgba(0,0,0,.7);
+	border-color:rgba(0,0,0,.3);
+}
+
+
+/* Light theme */
+
+.d-bloc .card,.l-bloc{
+	color:rgba(0,0,0,.5);
+}
+.d-bloc .card button:hover,.l-bloc button:hover{
+	color:rgba(0,0,0,.7);
+}
+.l-bloc .icon-round,.l-bloc .icon-square,.l-bloc .icon-rounded,.l-bloc .icon-semi-rounded-a,.l-bloc .icon-semi-rounded-b{
+	border-color:rgba(0,0,0,.7);
+}
+.d-bloc .card .divider-h span,.l-bloc .divider-h span{
+	border-color:rgba(0,0,0,.1);
+}
+.d-bloc .card .a-btn,.l-bloc .a-btn,.l-bloc .navbar a,.l-bloc a .icon-sm, .l-bloc a .icon-md, .l-bloc a .icon-lg, .l-bloc a .icon-xl, .l-bloc h1 a, .l-bloc h2 a, .l-bloc h3 a, .l-bloc h4 a, .l-bloc h5 a, .l-bloc h6 a, .l-bloc p a{
+	color:rgba(0,0,0,.6);
+}
+.d-bloc .card .a-btn:hover,.l-bloc .a-btn:hover,.l-bloc .navbar a:hover, .l-bloc a:hover .icon-sm, .l-bloc a:hover .icon-md, .l-bloc a:hover .icon-lg, .l-bloc a:hover .icon-xl, .l-bloc h1 a:hover, .l-bloc h2 a:hover, .l-bloc h3 a:hover, .l-bloc h4 a:hover, .l-bloc h5 a:hover, .l-bloc h6 a:hover, .l-bloc p a:hover{
+	color:rgba(0,0,0,1);
+}
+.l-bloc .navbar-toggle .icon-bar{
+	color:rgba(0,0,0,.6);
+}
+.d-bloc .card .btn-wire,.d-bloc .card .btn-wire:hover,.l-bloc .btn-wire,.l-bloc .btn-wire:hover{
+	color:rgba(0,0,0,.7);
+	border-color:rgba(0,0,0,.3);
+}
+
+/* Row Margin Offsets */
+
+.voffset{
+	margin-top:30px;
+}
+
+
+/* = NavBar
+-------------------------------------------------------------- */
+
+.hero .hero-nav{
+	padding-left:inherit;
+	padding-right:inherit;
+}
+.navbar-dark .nav .dropdown-menu .nav-link{
+	color: rgb(64, 64, 64);
+}
+/* = Sticky Nav
+-------------------------------------------------------------- */
+
+.sticky-nav.sticky{
+	position:fixed;
+	top:0;
+	z-index:1000;
+	box-shadow:0 1px 2px rgba(0,0,0,.3);
+	 transition: all .2s ease-out;
+}
+/* Uneven List Menu Icon */
+.navbar-light .menu-icon-uneven-list .navbar-toggler-icon{
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgba(0, 0, 0, 0.5)' stroke-miterlimit='10' d='M3,8H5v2H3V8Zm0,6H5v2H3V14Zm0,6H5v2H3V20ZM7,8H21v2H7V8Zm0,6H27v2H7V14Zm0,6H21v2H7V20Z'/%3E%3C/svg%3E");
+}
+.navbar-dark .menu-icon-uneven-list .navbar-toggler-icon{
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgba(255, 255, 255, 0.5)' stroke-miterlimit='10' d='M3,8H5v2H3V8Zm0,6H5v2H3V14Zm0,6H5v2H3V20ZM7,8H21v2H7V8Zm0,6H27v2H7V14Zm0,6H21v2H7V20Z'/%3E%3C/svg%3E");
+}
+/* Uneven List B Menu Icon */
+.navbar-light .menu-icon-uneven-b-list .navbar-toggler-icon{
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgba(0, 0, 0, 0.5)' stroke-miterlimit='10' d='M3,8H5v2H3V8Zm0,6H5v2H3V14Zm0,6H5v2H3V20ZM7,8H27v2H7V8Zm0,6H21v2H7V14Zm0,6H27v2H7V20Z'/%3E%3C/svg%3E");
+}
+.navbar-dark .menu-icon-uneven-b-list .navbar-toggler-icon{
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgba(255, 255, 255, 0.5)' stroke-miterlimit='10' d='M3,8H5v2H3V8Zm0,6H5v2H3V14Zm0,6H5v2H3V20ZM7,8H27v2H7V8Zm0,6H21v2H7V14Zm0,6H27v2H7V20Z'/%3E%3C/svg%3E");
+}
+
+/* Nav Special Classes */
+.nav-special{
+	overflow-y:scroll;
+}
+.nav-special .site-navigation{
+	top:0;
+	left:0;
+	width:100%;
+	position: relative!important;
+	max-width: 100%!important;
+	z-index: 1000;
+}
+.nav-special .nav > li{
+	width:100%;
+	background: none!important;
+	border:0!important;
+}
+.nav-special.collapsing{
+	-webkit-transition: none;
+	transition: none;
+	height:100%!important;
+	background: none!important;
+}
+.nav-special .navbar-nav .show .dropdown-menu{
+	position: relative!important;
+	transform: none!important;
+	float: none;
+	width: 100%;
+	margin-top: 0;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: 0;
+}
+.nav-special .nav .dropdown-menu .nav-link{
+	color:#FFF;
+}
+.blocsapp-special-menu{
+	position: absolute;
+	z-index:10000;
+}
+.nav-special.fullscreen-nav .caret,.nav-special.fullscreen-nav .dropdown-menu .dropdown .caret{
+	border-width: 8px;
+}
+.nav-special .navbar-nav .show>.nav-link{
+	color:#FFF;
+}
+
+/* Animate Menu Symbol */
+.navbar-toggle{
+	transition: all .1s linear;
+}
+.selected-nav{
+	opacity: 0;
+	transform: scale(0.3);
+	transition: all .1s linear;
+}
+
+
+/* Special Menu Close Button */
+.close-special-menu{
+	position: fixed;
+	display: block;
+	width: 25px;
+	height:25px;
+	top:16px;
+	right:10px;
+	z-index: 10000;
+}
+.nav-invert .sidebar-nav .close-special-menu{
+	left:260px;
+}
+.close-special-menu .close-icon{
+	display: block;
+	width:100%;
+	height:1px;
+	transform: rotate(45deg);
+	margin-top:12px;
+}
+.close-special-menu .close-icon:after{
+	content:"";
+	display:inherit;
+	width:inherit;
+	height:inherit;
+	background: inherit;
+	transform: rotate(90deg);
+}
+.lock-scroll{
+	overflow:hidden;
+	transition: background .3s linear;
+}
+.nav-special::-webkit-scrollbar{
+	-webkit-appearance: none;
+	width:0;
+	height:0;
+}
+.nav-special .dropdown-menu .dropdown .caret{
+	border-top-color: rgba(255,255,255,.8);
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	margin: 0 0 0 5px;
+	float: none;
+}
+.blocsapp-special-menu .site-navigation.pull-right{
+	float:none!important;
+}
+
+/* Nav Special Close Button */
+.close-special-menu .close-icon{
+	background:#fff;
+}
+.blocsapp-special-menu blocsnav{
+	background: #000;
+}
+
+/* Side Bar Navigation */
+.nav-special.sidebar-nav{
+	position: fixed;
+	right: -300px;
+	top: 0;
+	bottom: 0;
+	width: 300px;
+	z-index: 1000;
+	transition: all .2s linear;
+}
+.nav-invert .nav-special.sidebar-nav{
+	right: auto;
+	left: -300px;
+}
+ .nav-special.sidebar-nav .site-navigation{
+	margin-top:15px;
+	padding-left:15px;
+}
+.nav-special.sidebar-nav .nav > li a{
+	color:rgba(255,255,255,.8);
+}
+ .nav-special.sidebar-nav .nav > li a:hover{
+	color:#FFF;
+}
+ .open.nav-special.sidebar-nav{
+	right: 0;
+	transition: all .2s linear;
+}
+.nav-invert .open.nav-special.sidebar-nav{
+	left: 0;
+	transition: all .2s linear;
+}
+
+/* Content Tint */
+.content-tint{
+	z-index: -1;
+	transition: background .2s linear;
+}
+.content-tint.on{
+	display: block;
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	background: transparent;
+	z-index: 1001;
+	background:rgba(0,0,0,.4);
+}
+.content-tint.on:hover{
+	background:rgba(0,0,0,.1);
+}
+/* Handle Multi Level Navigation */.navbar-light .navbar-nav .nav-link {
+	color: rgb(64, 64, 64);
+}
+.btco-menu li > a {
+	padding: 10px 15px;
+	color: #000;
+}
+.btco-menu .active a:focus,.btco-menu li a:focus ,.navbar > .show > a:focus{
+	background: transparent;
+	outline: 0;
+}
+.dropdown-menu .show > .dropdown-toggle::after{
+	transform: rotate(-90deg);
+}
+
+/* = Bric adjustment margins
+-------------------------------------------------------------- */
+
+.mg-sm{
+	margin-top:10px;
+	margin-bottom:5px;
+}
+.mg-md{
+	margin-top:10px;
+	margin-bottom:20px;
+}
+
+/* = Buttons
+-------------------------------------------------------------- */
+
+.btn-d,.btn-d:hover,.btn-d:focus{
+	color:#FFF;
+	background:rgba(0,0,0,.3);
+}
+
+/* Prevent ugly blue glow on chrome and safari */
+button{
+	outline: none!important;
+}
+
+.btn-xl{
+	padding: 16px 40px;
+	font-size: 28px;
+}
+.a-block{
+	width:100%;
+	text-align:left;
+	display: inline-block;
+}
+.text-center .a-block{
+	text-align:center;
+}
+.icon-spacer{
+	margin-right:5px;
+}
+.btn .caret{
+	margin:0 0 0 5px}
+/* = Icons
+-------------------------------------------------------------- */
+.icon-sm{
+	font-size:18px!important;
+}
+.icon-md{
+	font-size:30px!important;
+}
+.icon-lg{
+	font-size:60px!important;
+}
+
+
+
+
+/* = Cards
+-------------------------------------------------------------- */
+.card-sq, .card-sq .card-header, .card-sq .card-footer{
+	border-radius:0;
+}
+.card-rd{
+	border-radius:30px;
+}
+.card-rd .card-header{
+	border-radius:29px 29px 0 0;
+}
+.card-rd .card-footer{
+	border-radius:0 0 29px 29px;
+}
+
+/* = Dividers
+-------------------------------------------------------------- */
+.divider-h{
+	padding:20px 0;
+	width:100%;
+	display:inline-block;
+}
+.divider-h span{
+	display: block;
+	border-top:1px solid transparent;
+}
+.divider-half{
+	width: 50%;
+	margin: 0 auto;
+}
+.dropdown-menu .divider-h,.dropdown-menu .divider-half{
+	padding:0;
+}
+
+/* = Forms
+-------------------------------------------------------------- */
+
+.form-control{
+	border-color:rgba(0,0,0,.1);
+	box-shadow:none;
+}
+
+
+
+/* ScrollToTop button */
+
+.scrollToTop{
+	width:40px;
+	height:40px;
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	opacity: 0;
+	z-index: 500;
+	transition: all .3s ease-in-out;
+}
+.scrollToTop span{
+	margin-top: 6px;
+}
+.showScrollTop{
+	font-size: 14px;
+	opacity: 1;
+}
+
+/* Hide Object */
+.object-hidden{
+	display:none;
+}
+
+/* = Custom Styling
+-------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6,p,label,.btn,a{
+	font-family:"Helvetica";
+}
+.container{
+	max-width:1140px;
+}
+.header-home{
+	background-size:auto auto;
+}
+.img-header-home{
+	background-size:auto auto;
+	background-repeat:no-repeat;
+	background-image:url("img/headerhome campo.png");
+	background-position:center center;
+	background-color:transparent;
+}
+.img-style{
+	width:150px;
+}
+.txt-titulo-web{
+	font-family:"Montserrat";
+	color:#FFFFFF!important;
+	font-size:60px;
+	font-weight:700;
+}
+.h4-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:700;
+	margin-top:0px;
+	margin-bottom:19px;
+}
+.img-margin-bottom{
+	margin-bottom:100px;
+	width:952px;
+	margin-top:43px;
+}
+.btn-azul{
+	background-color:#0667D0;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+	color:#FFFFFF!important;
+	width:80%;
+}
+.h1-margin-top{
+	margin-top:40px;
+}
+.logo-navbar{
+	background-image:url("img/logo smattcom.png");
+	background-repeat:no-repeat;
+	background-size:120px auto;
+	width:120px;
+}
+.txt-navbar{
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#FEFFFE!important;
+	font-size:16px;
+}
+.txttitulos{
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:30px;
+	color:#1E1F1E!important;
+}
+.txtcuerpo{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:16px;
+	color:#555655!important;
+}
+.p-margin-top{
+	margin-top:25px;
+	margin-bottom:50px;
+}
+.bloc-margin-top{
+	margin-top:50px;
+}
+.p-bloc-1-margin-top{
+	margin-top:15px;
+}
+.bloc-bloc-1-margin-top{
+	margin-top:0px;
+}
+.row-margin-top{
+	margin-top:70px;
+	margin-bottom:60px;
+}
+.bloc-0-margin-top{
+	margin-top:2px;
+}
+.h1-cómo-funciona-margin-top{
+	margin-top:0px;
+}
+.row-bloc-1-margin-top{
+	margin-top:20px;
+}
+.bloc-0-bloc-1-margin-top{
+	margin-top:90px;
+}
+.p-8-margin-top{
+	margin-top:30px;
+}
+.card-body-style{
+	width:100%;
+}
+.row-margin-left{
+	width:100%;
+	margin-left:95px;
+}
+.row-10-margin-top{
+	margin-top:60px;
+}
+.h1-bloc-1-margin-top{
+	margin-top:30px;
+}
+.h1-6-margin-top{
+	margin-top:30px;
+}
+.h1-7-margin-top{
+	margin-top:30px;
+}
+.h1-8-margin-top{
+	margin-top:30px;
+}
+.h1-9-margin-top{
+	margin-top:30px;
+}
+.bloc-8230-margin-top{
+	margin-top:30px;
+}
+.p-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:16px;
+	width:48.51%;
+	margin-left:0px;
+	margin-bottom:0px;
+	margin-top:30px;
+}
+.bandera{
+	;
+}
+.mx{
+	padding-left:0px;
+}
+.titulo-cards-productos{
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#1E1F1E!important;
+}
+.h3-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:15px;
+	width:76.16%;
+	margin-left:3px;
+}
+.btn-bloc-1-style{
+	width:100%;
+}
+.row-14-margin-top{
+	margin-top:20px;
+}
+.p-7-margin-top{
+	margin-top:25px;
+}
+.img-margin-top{
+	margin-top:36px;
+}
+.p-13-margin-top{
+	margin-top:40px;
+}
+.btn-azul:hover{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+	color:#FEFFFE!important;
+	background-color:#00278E;
+}
+.aguacate:hover{
+	background-size:auto auto;
+}
+.p-margin-left{
+	margin-bottom:2px;
+	width:47.67%;
+	margin-left:1px;
+}
+.btn-button-style{
+	width:79.26%;
+	margin-top:30px;
+	margin-right:92px;
+}
+.btn-outline{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+	color:#0069D7!important;
+	border-style:solid;
+	border-color:#0069D7!important;
+	background-color:transparent;
+}
+.btn-outline:hover{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+	color:#FEFFFE!important;
+	background-color:#0069D7;
+	border-style:solid;
+	border-color:#0069D7!important;
+}
+.row-27-margin-top{
+	margin-top:90px;
+}
+.p-bloc-1-style{
+	font-size:20px;
+}
+.p-margin-bottom{
+	margin-bottom:0px;
+	margin-top:25px;
+}
+.hover-card:hover{
+	box-shadow:0px 10px 18px rgba(0,0,0,0.2);
+	opacity:7;
+}
+.bloc-44248-margin-top{
+	margin-top:40px;
+}
+.btn-margin-top{
+	margin-top:40px;
+	width:100%;
+}
+.condo-alianzas:hover{
+	background-color:#F6F9FB;
+}
+.row-31-margin-top{
+	margin-top:90px;
+}
+.h3-bloc-1-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:14px;
+}
+.h3--27-visitas-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:14px;
+}
+.card-body-bloc-1-style{
+	border-style:none;
+	border-color:rgba(0,0,0,0.0)!important;
+}
+.img-nota-1-style{
+	width:286px;
+}
+.h3-27-visitas-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:14px;
+	margin-left:27px;
+}
+.row-32-margin-top{
+	margin-top:10px;
+}
+.row-bloc-2-blog-margin-top{
+	margin-top:30px;
+}
+.h1-margin-bottom{
+	margin-bottom:20px;
+	margin-top:-1px;
+}
+.p-2-margin-top{
+	margin-top:10px;
+}
+.color-como-funciona{
+	background-color:#F7F9FB;
+}
+.h1-como-funciona-margin-top{
+	margin-top:40px;
+	margin-bottom:10px;
+}
+.p-como-funciona-margin-top{
+	margin-top:20px;
+}
+.team-card{
+	min-height:350px;
+	background-color:transparent;
+}
+.img-tomate-saladet-style{
+	margin-top:48px;
+	width:200px;
+}
+.img-margin-left{
+	margin-left:24px;
+}
+.row-12-margin-left{
+	margin-top:11px;
+}
+.h5-margin-bottom{
+	margin-bottom:10px;
+}
+.txt-card-producto{
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#768797!important;
+}
+.btn-bloc-4-style{
+	width:100%;
+	margin-top:0px;
+}
+.pais{
+	margin-left:-28px;
+}
+.row-13-style{
+	width:94.83%;
+}
+.h3-bloc-4-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:14px;
+}
+.divider-margin-top{
+	margin-top:50px;
+}
+.btn-4-style{
+	width:100%;
+}
+.img-canacint-style{
+	width:100px;
+}
+.row-alianzas-margin-top{
+	margin-top:65px;
+}
+.h1-blog-smattcom-margin-top{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.h1-alianzas-margin-bottom{
+	margin-bottom:0px;
+	margin-top:98px;
+}
+.img-alianzas-margin-top{
+	margin-top:1px;
+	margin-left:7px;
+	margin-right:7px;
+}
+.p-alianzas-margin-top{
+	margin-top:15px;
+}
+.img-bloc-2-blog-margin-top{
+	margin-top:0px;
+}
+.p-bloc-2-blog-margin-top{
+	margin-top:30px;
+}
+.color-footer{
+	background-color:#F0F3F7;
+}
+.link-margin-top{
+	margin-top:19px;
+}
+.txtfooter{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+	color:#798796!important;
+}
+.txtfooter:hover{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+	color:#158AFF!important;
+}
+.link-bloc-8-margin-top{
+	margin-top:10px;
+}
+.link-0-margin-top{
+	margin-top:11px;
+}
+.link-0-bloc-8-margin-top{
+	margin-top:10px;
+}
+.link-blog-margin-top{
+	margin-top:10px;
+}
+.txt-titulos-footer{
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:14px;
+	color:#768797!important;
+}
+.btn-8-style{
+	width:100%;
+	margin-top:30px;
+}
+.h1-productos-margin-bottom{
+	margin-bottom:3px;
+}
+.img-header-como-funciona{
+	;
+}
+.header-como-funciona{
+	height:730px;
+	background-image:url("img/header como funciona nuevo.png");
+}
+.img-como-funciona{
+	background-image:url("img/header como funciona.png");
+}
+.h1-3-margin-top{
+	margin-top:150px;
+	margin-bottom:10px;
+}
+.btn-5-style{
+	width:37.98%;
+	margin-top:30px;
+}
+.navbar-brand img{
+	width:130px;
+}
+.h1-bloc-2-margin-bottom{
+	margin-bottom:15px;
+}
+.p-2-bloc-2-margin-top{
+	margin-top:30px;
+	font-size:16px;
+	margin-bottom:0px;
+}
+.h1-4-margin-bottom{
+	margin-bottom:8px;
+	margin-top:50px;
+}
+.row-12-margin-top{
+	margin-top:40px;
+	margin-bottom:50px;
+}
+.txt-sub-como-funciona{
+	font-family:"Montserrat";
+	font-weight:700;
+	text-decoration:none;
+	font-size:20px;
+	color:#555655!important;
+}
+.img-comprar-vender-style{
+	height:600px;
+}
+.h1-5-margin-top{
+	margin-top:188px;
+	margin-bottom:0px;
+}
+.p-4-margin-top{
+	margin-top:25px;
+}
+.p-3-margin-top{
+	margin-top:25px;
+}
+.p-5-margin-top{
+	margin-top:25px;
+}
+.img-segurid-style{
+	width:440px;
+}
+.btn-5-button-style{
+	width:49.21%;
+}
+.btn-22251-style{
+	width:65.05%;
+	margin-top:50px;
+}
+.p-2-margin-bottom{
+	margin-bottom:90px;
+	margin-top:30px;
+}
+.h1-12876-margin-top{
+	margin-top:90px;
+	margin-bottom:10px;
+}
+.txt-sub-web{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:25px;
+	color:#FFFFFF!important;
+}
+.btn-7-style{
+	width:100%;
+	margin-top:1px;
+}
+.btn-9-style{
+	width:100%;
+	margin-top:0px;
+}
+.img-header-productos-agricolas{
+	height:730px;
+}
+.row-margin-bottom{
+	margin-bottom:27px;
+}
+.row-productos-1-margin-bottom{
+	margin-bottom:30px;
+}
+.row-53-margin-bottom{
+	margin-bottom:30px;
+}
+.row-65-margin-bottom{
+	margin-bottom:30px;
+}
+.img-cebol-style{
+	height:250px;
+	width:300px;
+}
+.header-tomate-saladette{
+	background-image:url("img/header tomate final.png");
+}
+.h1-bloc-10-margin-top{
+	margin-top:80px;
+}
+.h1-style{
+	font-size:60px;
+	margin-left:0px;
+	font-family:Montserrat;
+	font-weight:700;
+	margin-top:0px;
+	text-align:left;
+	margin-bottom:0px;
+}
+.row-bloc-10-style{
+	width:100%;
+}
+.container-div-bloc-10-style{
+	width:100%;
+}
+.txtvendedores{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:16px;
+	color:#FFFFFF!important;
+	text-align:center;
+}
+.h3-margin-left{
+	margin-left:374px;
+}
+.h1-14-margin-top{
+	margin-top:102px;
+}
+.btn-26-style{
+	width:67.19%;
+	margin-top:50px;
+}
+.header-pimiento{
+	background-image:url("img/header pimiento.png");
+	background-repeat:no-repeat;
+}
+.header-aguacate{
+	background-image:url("img/header aguacate.png");
+}
+.header-cebolla{
+	background-image:url("img/header cebolla_2.png");
+}
+.header-limon{
+	background-image:url("img/header limon_4.png");
+	background-repeat:no-repeat;
+}
+.header-chile-{
+	background-image:url("img/header chile jalapeño.png");
+}
+.header-tomatillo{
+	background-image:url("img/header tomatillo.png");
+}
+.header-platano{
+	background-image:url("img/header Plátano.png");
+}
+.header-pepino{
+	background-image:url("img/header pepino.png");
+}
+.header-ajo{
+	background-image:url("img/header ajo.png");
+}
+.header-maiz{
+	background-image:url("img/header berenjena.png");
+}
+.header-cafe{
+	background-image:url("img/header cafe.png");
+}
+.header-miel{
+	background-image:url("img/header miel.png");
+}
+.header-mango{
+	background-image:url("img/header mango_2.png");
+}
+.header-papaya{
+	background-image:url("img/header papaya.png");
+}
+.header-alianzas{
+	background-size:auto auto;
+	height:730px;
+}
+.btn-bloc-52-style{
+	width:47.72%;
+	margin-top:60px;
+}
+.txt-sub-header{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:20px;
+	color:#FFFFFF!important;
+	width:70%;
+}
+.btn-bloc-53-style{
+	width:100%;
+	margin-top:40px;
+}
+.h1-productores-margin-top{
+	margin-top:10px;
+}
+.row-242-margin-top{
+	margin-top:50px;
+}
+.row-bloc-53-margin-top{
+	margin-top:50px;
+}
+.btn-83-style{
+	width:100%;
+	margin-top:9px;
+}
+.row-style{
+	width:100%;
+	margin-top:50px;
+}
+.row-bloc-54-style{
+	width:100%;
+}
+.p-bloc-54-margin-top{
+	margin-top:20px;
+}
+.h1-bloc-54-margin-bottom{
+	margin-bottom:50px;
+}
+.p-68-margin-top{
+	margin-top:20px;
+}
+.cards-alianzas{
+	margin-top:30px;
+}
+.row-240-margin-top{
+	margin-top:50px;
+}
+.h1-85-margin-top{
+	margin-top:0px;
+}
+.logo-azul{
+	background-image:url("img/logo-azul.png");
+	background-repeat:no-repeat;
+}
+.color-nav{
+	background-color:#0069D7;
+}
+.h1-bloc-57-margin-top{
+	margin-top:0px;
+}
+.txt-link{
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#94A5B5!important;
+	font-size:16px;
+}
+.txt-enlaces{
+	text-decoration:none;
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#94A5B5!important;
+	font-size:16px;
+}
+.txt-link:hover{
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#0667D0!important;
+	font-size:16px;
+}
+.h3-margin-bottom{
+	margin-bottom:10px;
+	margin-top:40px;
+}
+.img-conaproch-style{
+	width:100px;
+}
+.btn-button-margin-top{
+	margin-top:30px;
+	width:48.95%;
+}
+.p-footer-margin-top{
+	margin-top:10px;
+}
+.h3- twitter--margin-bottom{
+	margin-bottom:7px;
+}
+.h1-aapps-margin-top{
+	margin-top:40px;
+}
+.p-123-margin-top{
+	margin-top:-20px;
+}
+.h1-87-margin-top{
+	margin-top:40px;
+}
+.btn-91-style{
+	width:62.22%;
+	margin-top:30px;
+}
+.h1-canacintra-margin-top{
+	margin-top:50px;
+}
+.header-contacto{
+	height:730px;
+}
+.label-style{
+	font-family:Montserrat;
+	font-weight:400;
+	width:25.7%;
+}
+.label-email-style{
+	font-family:Montserrat;
+	font-weight:400;
+}
+.label-message-style{
+	font-family:Montserrat;
+	font-weight:400;
+}
+.form-margin-top{
+	margin-top:50px;
+}
+.btn-enviar-margin-top{
+	margin-top:30px;
+	width:100%;
+	margin-bottom:99px;
+}
+.txt-subtitulo-web{
+	font-family:"Montserrat";
+	font-weight:400;
+	text-align:center;
+	font-size:25px;
+	color:#FFFFFF!important;
+}
+.img-header-descarga{
+	background-image:url("img/header DESCARGA NARANJA.png");
+}
+.h1-bloc-77-margin-top{
+	margin-top:93px;
+}
+.btn-bloc-77-style{
+	width:82.88%;
+	margin-top:30px;
+}
+.h1-bloc-5-margin-bottom{
+	margin-bottom:10px;
+}
+.p-bloc-5-margin-top{
+	margin-top:39px;
+}
+.h1-83-margin-top{
+	margin-bottom:10px;
+}
+.h1-84-margin-bottom{
+	margin-bottom:10px;
+}
+.h2-margin-top{
+	margin-bottom:10px;
+}
+.p-82-margin-top{
+	margin-top:30px;
+}
+.h1-bloc-11-margin-top{
+	margin-bottom:-23px;
+	margin-top:0px;
+}
+.p-bloc-80-margin-top{
+	margin-top:40px;
+}
+.img-header-blog{
+	background-image:url("img/header blog  prueba.png");
+	background-repeat:no-repeat;
+}
+.img-logo-blog-margin-left{
+	margin-left:0px;
+	width:500px;
+}
+.color-news-letter{
+	background-color:#EFF3F7;
+}
+.img-bloc-83-style{
+	width:320px;
+	margin-bottom:30px;
+}
+.h1-bloc-83-margin-bottom{
+	margin-bottom:10px;
+}
+.txt-imput{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+	color:#93A5B5!important;
+}
+.field-margin-bottom{
+	margin-bottom:20px;
+}
+.btn-118-margin-top{
+	margin-top:20px;
+	width:100%;
+	margin-left:0px;
+}
+.row-bloc-84-style{
+	width:100%;
+	margin-top:0px;
+}
+.tap{
+	font-family:"Montserrat";
+	font-weight:400;
+}
+.container-div-bloc-84-margin-top{
+	margin-top:30px;
+}
+.img-blog-1-style{
+	width:513px;
+	border-radius:0px 0px 0px 0px;
+}
+.p-bloc-84-margin-top{
+	margin-top:20px;
+}
+.row-bloc-84-margin-top{
+	margin-top:30px;
+}
+.card-style{
+	width:100%;
+}
+.h1-bloc-84-margin-top{
+	margin-top:20px;
+}
+.img-blog-1-margin-top{
+	margin-top:0px;
+}
+.h1-noticias-margin-top{
+	margin-top:60px;
+	margin-bottom:0px;
+}
+.img-icono-smattcom-style{
+	width:50px;
+	margin-top:20px;
+}
+.p-160-margin-top{
+	margin-top:25px;
+	width:100%;
+}
+.txt-cards-pequeño{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+}
+.row-316-margin-top{
+	margin-top:0px;
+	width:75.63%;
+}
+.btn-leer-nota-style{
+	width:100%;
+	margin-top:10px;
+}
+.h3-73-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:14px;
+	width:87.19%;
+	margin-right:20px;
+	margin-left:68px;
+}
+.row-317-margin-top{
+	margin-top:14px;
+}
+.btn-siguiente-style{
+	width:100%;
+	margin-left:31px;
+}
+.row-341-style{
+	width:100%;
+}
+.btn-120-style{
+	width:100%;
+}
+.bloc-bloc-87-margin-top{
+	margin-top:50px;
+}
+.img-167-style{
+	width:40px;
+	margin-right:20px;
+}
+.p-bloc-87-style{
+	width:100%;
+	margin-top:8px;
+}
+.row-bloc-87-style{
+	width:70.18%;
+}
+.p-bloc-87-margin-top{
+	margin-top:30px;
+}
+.h3--31-05-2019-style{
+	font-size:14px;
+	font-family:Montserrat;
+	font-weight:400;
+}
+.h1-bloc-87-margin-top{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.img-bloc-87-margin-left{
+	margin-right:1054px;
+}
+.divider-bloc-2-blog-margin-top{
+	margin-top:1px;
+}
+.img-alianzas-style{
+	width:100px;
+}
+.img-78-style{
+	width:490px;
+	margin-top:40px;
+}
+.row-236-margin-top{
+	margin-top:60px;
+}
+.img-bloc-77-margin-top{
+	width:555px;
+}
+.row-bloc-0-style{
+	width:102.54%;
+}
+.img-iphones-azul-style{
+	width:500px;
+}
+.row-3-margin-top{
+	margin-top:0px;
+}
+.img-1-style{
+	width:800px;
+}
+.html-widget-margin-left{
+	margin-top:30px;
+}
+.img-header-2{
+	background-image:url("img/headerhome campo.png");
+}
+.img-logo-smattcom-style{
+	width:290px;
+	margin-bottom:0px;
+}
+.header-como-funciona-2{
+	height:730px;
+}
+.img-descarga-2{
+	;
+}
+.header-chile-2{
+	background-image:url("img/header chile jalapeño.png");
+}
+.header-platano-2{
+	background-image:url("img/header Plátano.png");
+}
+.bloc-0-bloc-84-margin-top{
+	margin-top:50px;
+}
+.h1-noticias-margin-bottom{
+	margin-bottom:0px;
+}
+.container-div-0-bloc-84-style{
+	width:100%;
+}
+.field-style{
+	width:100%;
+	margin-top:8px;
+}
+.menu activo{
+	border-color:#FEFFFE!important;
+	border-top-width:80px;
+}
+.img-209-margin-left{
+	margin-left:0px;
+}
+.img-icono-gracias-style{
+	width:170px;
+}
+.h1-130-margin-top{
+	margin-top:50px;
+}
+.container-div-bloc-84-style{
+	width:100%;
+}
+.div-card-2{
+	overflow:visible;
+	float:none;
+}
+.autor-nota{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:14px;
+}
+.h6-margin-top{
+	margin-top:34px;
+	margin-left:0px;
+}
+.h3-margin-top{
+	margin-top:30px;
+}
+.container-div-0-margin-top{
+	margin-top:30px;
+}
+.row-bloc-84-margin-bottom{
+	margin-bottom:0px;
+}
+.container-div-0-bloc-84-margin-top{
+	margin-top:20px;
+}
+.row-241-margin-top{
+	margin-top:30px;
+}
+.bloc-22800-margin-top{
+	margin-top:30px;
+}
+.img-header-banco{
+	background-color:transparent;
+}
+.h2-style{
+	font-size:20px;
+}
+.btn-143-margin-top{
+	margin-top:35px;
+	width:100%;
+}
+.img-184-margin-top{
+	margin-bottom:25px;
+	margin-left:0px;
+	margin-top:5px;
+}
+.h3-91-margin-bottom{
+	margin-bottom:20px;
+}
+.p-189-margin-top{
+	margin-top:40px;
+}
+.h1-133-margin-bottom{
+	margin-bottom:20px;
+}
+.p-192-margin-top{
+	margin-top:40px;
+}
+.btn-145-margin-top{
+	margin-top:50px;
+}
+.img-185-margin-left{
+	margin-left:0px;
+}
+.h3-92-margin-bottom{
+	margin-bottom:20px;
+}
+.p-30413-margin-top{
+	margin-top:40px;
+}
+.img-bloc-105-margin-top{
+	margin-top:230px;
+	margin-left:0px;
+	width:600px;
+}
+.h3-bloc-105-style{
+	font-family:Montserrat;
+	font-size:50px;
+}
+.row-bloc-105-style{
+	width:100%;
+}
+.p-bloc-105-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:16px;
+	margin-left:0px;
+	width:100%;
+}
+.btn-143-style{
+	width:100%;
+	margin-top:5px;
+}
+.img-183-style{
+	width:53px;
+}
+.img-bloc-108-style{
+	width:600px;
+}
+.bloc-bloc-105-margin-top{
+	margin-top:-286px;
+}
+.h1-bloc-105-style{
+	font-family:Montserrat;
+	font-weight:700;
+	font-size:60px;
+	letter-spacing:3px;
+}
+.h1-136-style{
+	font-family:Montserrat;
+	font-weight:700;
+	margin-top:70px;
+	width:48.51%;
+}
+.h3-93-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:20px;
+}
+.bloc-bloc-113-margin-top{
+	margin-top:258px;
+}
+.row-bloc-113-margin-top{
+	margin-top:131px;
+}
+.p-194-style{
+	width:48.25%;
+	font-family:Montserrat;
+	font-weight:400;
+}
+.fondo-exportacion{
+	background-image:url("img/comercio mundo 2.png");
+	background-size:auto auto;
+	background-position:center top;
+	background-repeat:no-repeat;
+	height:800px;
+}
+.h1-bloc-112-margin-top{
+	margin-top:64px;
+	width:40.53%;
+	font-family:Montserrat;
+	font-weight:700;
+}
+.p-bloc-112-style{
+	width:40%;
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:18px;
+}
+.logo-smattcom{
+	;
+}
+.img-logo-smattcom-margin-top{
+	margin-top:144px;
+}
+.btn-147-style{
+	width:64.5%;
+	margin-top:50px;
+}
+.h2-margin-bottom{
+	margin-bottom:5px;
+}
+.p-195-margin-top{
+	margin-top:30px;
+}
+.img-193-margin-left{
+	margin-left:4px;
+	margin-top:10px;
+}
+.h1-137-margin-bottom{
+	margin-bottom:10px;
+}
+.row-387-margin-top{
+	margin-top:50px;
+}
+.h5-style{
+	font-family:Montserrat;
+	font-weight:500;
+	color:#555655!important;
+	margin-top:20px;
+	font-size:16px;
+}
+.img-bloc-114-style{
+	width:70px;
+}
+.h1-138-margin-bottom{
+	margin-bottom:10px;
+}
+.p-197-margin-top{
+	margin-top:30px;
+}
+.img-aguacate-2-margin-top{
+	margin-top:50px;
+	width:800px;
+}
+.h1-139-margin-bottom{
+	margin-bottom:10px;
+}
+.p-199-margin-top{
+	margin-top:30px;
+}
+.img-bloc-116-style{
+	width:100px;
+}
+.h5-bloc-116-style{
+	font-family:Montserrat;
+	font-weight:400;
+}
+.row-bloc-116-margin-top{
+	margin-top:50px;
+}
+.h1-140-margin-bottom{
+	margin-bottom:0px;
+}
+.btn-148-margin-top{
+	margin-top:28px;
+	width:100%;
+}
+.h1-bloc-116-margin-top{
+	margin-top:100px;
+	margin-bottom:10px;
+}
+.btn-148-style{
+	width:100%;
+	margin-top:25px;
+}
+.btn-26-margin-top{
+	margin-top:20px;
+}
+.h3-34-style{
+	font-size:16px;
+	font-family:Montserrat;
+	font-weight:400;
+	margin-top:14px;
+}
+.btn-40693-style{
+	width:75.14%;
+}
+.tabla-tomate{
+	background-image:url("img/precios tomate.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.texto-tabla{
+	font-family:"Montserrat";
+	font-weight:700;
+	text-align:center;
+	color:#6C6C6C!important;
+	font-size:16px;
+}
+.p-bloc-12-margin-top{
+	margin-top:12px;
+	margin-bottom:50px;
+}
+.tabla-pimiento{
+	background-image:url("img/precios tomate.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.p-bloc-114-margin-top{
+	margin-top:20px;
+}
+.h1-bloc-116-style{
+	font-size:30px;
+	font-family:Montserrat;
+	font-weight:700;
+	margin-top:90px;
+}
+.btn-147-button-style{
+	width:100%;
+	margin-top:27px;
+}
+.outline-blanco{
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#FEFFFE!important;
+	background-color:transparent;
+	border-style:solid;
+	border-color:#FEFFFE!important;
+	font-size:14px;
+}
+.outline-blanco:hover{
+	border-style:solid;
+	border-color:#FEFFFE!important;
+	background-color:#FEFFFE;
+	color:#0069D7!important;
+}
+.franja-formulario{
+	margin-top:40px;
+}
+.franja-formulario:hover{
+	;
+}
+.h3-96-margin-bottom{
+	margin-bottom:10px;
+}
+.paddong-linea{
+	margin-bottom:50px;
+}
+.img-aliado-1-style{
+	width:180px;
+}
+.img-aliado-3-style{
+	width:180px;
+}
+.img-aliado-2-style{
+	width:180px;
+}
+.img-aliado-4-style{
+	width:180px;
+}
+.p-bloc-115-margin-bottom{
+	margin-bottom:0px;
+	margin-top:60px;
+}
+.top-franja-formulario{
+	margin-top:20px;
+}
+.link-style{
+	width:100%;
+	font-weight:bold;
+}
+.tabla-pimiento-2{
+	background-image:url("img/pimiento web.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:auto 100%;
+}
+.tabla-aguacate{
+	background-image:url("img/precios tomate.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-aguacate-2{
+	background-image:url("img/aguacate web.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-cebolla{
+	background-image:url("img/cebolla web corregida.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-limon{
+	background-image:url("img/limon web corregido.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-jalapeño{
+	background-image:url("img/jalapeño web corregido.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-tomatillo{
+	background-image:url("img/tomatillo web corregido.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-platano{
+	background-image:url("img/platano web corregido.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-pepino{
+	background-image:url("img/pepino web corregido.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-ajo{
+	background-image:url("img/ajo web corregido.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-mango{
+	background-image:url("img/mango wen corregido.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.tabla-papaya{
+	background-image:url("img/papaya web corregido.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.btn-149-style{
+	width:70.18%;
+	margin-top:21px;
+}
+.img-como-funciona-style{
+	width:900px;
+	margin-top:25px;
+}
+.img-avion-2-style{
+	width:350px;
+}
+.img-bloc-122-margin-top{
+	width:400px;
+}
+.p-17-bloc-12-margin-top{
+	margin-top:60px;
+}
+.img-tabulador-tomate{
+	background-image:url("img/tabulador tomate saladette web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-16-margin-top{
+	margin-top:30px;
+	margin-bottom:48px;
+}
+.precio-gobal{
+	background-color:transparent;
+	width:180px;
+	text-align:center;
+	font-size:25px;
+	color:#007ED9!important;
+	font-weight:700;
+	border-style:solid;
+	border-color:#6F706F!important;
+	padding:5px 5px 5px 5px;
+	border-radius:6px 6px 6px 6px;
+	border-width:1px 1px 1px 1px;
+}
+.precio-mas-alto{
+	background-color:transparent;
+	width:180px;
+	text-align:center;
+	font-size:25px;
+	color:#00E346!important;
+	font-weight:700;
+	border-style:solid;
+	border-color:#707070!important;
+	padding:5px 5px 5px 5px;
+	border-radius:6px 6px 6px 6px;
+	border-width:1px 1px 1px 1px;
+}
+.precio-mas-bajo{
+	background-color:transparent;
+	width:180px;
+	text-align:center;
+	font-size:25px;
+	color:#FC4D4D!important;
+	font-weight:700;
+	border-style:solid;
+	border-color:#707070!important;
+	padding:5px 5px 5px 5px;
+	border-radius:6px 6px 6px 6px;
+	border-width:1px 1px 1px 1px;
+}
+.p-46814-margin-top{
+	margin-top:40px;
+}
+.p-18-margin-top{
+	margin-top:0px;
+}
+.bloc-0-bloc-12-margin-top{
+	margin-top:50px;
+	margin-bottom:0px;
+}
+.h3--10-56-margin-top{
+	margin-top:30px;
+}
+.txt-header-precios{
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#FEFFFE!important;
+	width:60%;
+}
+.p-12-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-pimiento{
+	background-image:url("img/tabulador fresa  web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-13-margin-top{
+	margin-top:40px;
+}
+.p-bloc-16-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-aguacate{
+	background-image:url("img/tabulador aguacate  web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-19-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-cebolla{
+	background-image:url("img/tabulador cebolla web_2.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.img-tabulador-jalapeño{
+	background-image:url("img/tabulador jalapeño web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-25-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-tomatillo{
+	background-image:url("img/tabulador tomatillo web_2.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-28-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-platano{
+	background-image:url("img/tabulador platano web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-31-margin-top{
+	margin-top:39px;
+}
+.p-bloc-34-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-pepino{
+	background-image:url("img/tabulador pepino web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-37-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-ajo{
+	background-image:url("img/tabulador ajo web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-40-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-berenjena{
+	background-image:url("img/tabulador Berenjena web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-46-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-miel{
+	background-image:url("img/tabulador miel web_3.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-49-margin-top{
+	margin-top:41px;
+}
+.img-tabulador-mango{
+	background-image:url("img/tabulador mango web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-90-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-papaya{
+	background-image:url("img/tabulador papayaweb.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.p-bloc-22-margin-top{
+	margin-top:40px;
+}
+.img-tabulador-limon{
+	background-image:url("img/tabulador limon web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+}
+.img-tabulador-cafe{
+	background-image:url("img/tabulador cafe web.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:141px;
+}
+.img-grafica-style{
+	width:500px;
+}
+.img-grafica-margin-top{
+	margin-top:64px;
+	width:555px;
+}
+.p-66-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:14px;
+	margin-top:11px;
+}
+.img-62-margin-top{
+	margin-top:40px;
+}
+.p-bloc-32-style{
+	font-size:14px;
+	font-family:Montserrat;
+	font-weight:400;
+	margin-top:30px;
+}
+.container-div-bloc-32-margin-top{
+	margin-top:50px;
+}
+.row-bloc-32-margin-top{
+	margin-top:100px;
+}
+.row-164-margin-top{
+	margin-top:50px;
+}
+.row-163-margin-top{
+	margin-top:50px;
+}
+.img-logo-confenac-style{
+	width:100px;
+}
+.img-logo-isscat-style{
+	width:100px;
+}
+.img-canacint-margin-left{
+	width:200px;
+}
+.btn-42-style{
+	width:100%;
+	margin-top:9px;
+}
+.bloc-bloc-32-margin-bottom{
+	margin-bottom:50px;
+}
+.h5-bloc-35-style{
+	font-family:Montserrat;
+	font-weight:400;
+}
+.h3-modal-heading-style{
+	font-family:Montserrat;
+	font-weight:700;
+}
+.h3-descargar-pdf -style{
+	font-family:"Montserrat";
+	font-weight:700;
+	text-transform:uppercase;
+}
+.btn-descargar-style{
+	width:24.23%;
+}
+.h1-bloc-32-margin-top{
+	margin-top:0px;
+}
+.btn-42-button-style{
+	width:67.8%;
+	margin-top:19px;
+}
+.padding-colum{
+	padding-top:50px;
+	padding-bottom:50px;
+	padding-left:50px;
+}
+.h1-39-margin-top{
+	margin-top:50px;
+	width:100%;
+}
+.container-div-0-bloc-32-margin-top{
+	margin-top:50px;
+}
+.p-69-style{
+	width:100%;
+	font-size:20px;
+}
+.img-bloc-32-margin-top{
+	margin-top:22px;
+	width:458px;
+}
+.corner-row{
+	border-radius:20px 20px 20px 20px;
+}
+.img-63-margin-top{
+	margin-top:18px;
+	width:255px;
+}
+.titulo-banner{
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#FEFFFE!important;
+}
+.sub-banner{
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#FEFFFE!important;
+}
+.container-div-bloc-32-style{
+	height:65px;
+	margin-top:16px;
+	background-position:left top;
+}
+.h1-41-margin-top{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.container-div-35561-style{
+	height:67px;
+	margin-top:0px;
+}
+.btn-43-style{
+	width:68.77%;
+	margin-top:20px;
+}
+.img-65-margin-top{
+	margin-top:31px;
+	width:233px;
+	border-radius:0px 0px 0px 0px;
+}
+.titulo-blanco{
+	color:#FEFFFE!important;
+}
+.cuerpo-blanco{
+	color:#FFFFFF!important;
+	font-family:"Montserrat";
+	font-weight:400;
+}
+.btn-bloc-35-style{
+	width:100%;
+	margin-top:40px;
+}
+.btn-more-info-margin-top{
+	margin-top:30px;
+	width:82.52%;
+}
+.img-66-style{
+	width:900px;
+}
+.btn-47-style{
+	width:81.98%;
+	margin-top:20px;
+}
+.bloc-bloc-31-margin-top{
+	margin-top:60px;
+}
+.h3-bloc-119-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:400;
+	margin-top:49px;
+	margin-left:212px;
+	margin-bottom:0px;
+}
+.container-div-bloc-119-margin-top{
+	margin-top:31px;
+}
+.consultar{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:18px;
+	text-align:left;
+}
+.btn-133-style{
+	width:100%;
+	margin-top:25px;
+	margin-bottom:50px;
+}
+.bloc-bloc-121-style{
+	width:100%;
+	margin-top:0px;
+}
+.btn-bloc-121-style{
+	width:100%;
+	margin-top:27px;
+}
+.bloc-0-style{
+	width:100%;
+}
+.btn-azul:active{
+	background-color:#0667D0;
+}
+.p-285-style{
+	font-size:20px;
+	margin-top:36px;
+	margin-bottom:3px;
+	width:68.28%;
+	font-family:Montserrat;
+	font-weight:400;
+}
+.p-286-style{
+	font-family:Montserrat;
+	font-weight:700;
+	font-size:25px;
+	width:84.14%;
+}
+.img-165-style{
+	width:417px;
+	margin-top:19px;
+}
+.img-165-style:active{
+	;
+}
+.container-div-33646-style{
+	height:53px;
+	width:100%;
+}
+.container-div-40555-margin-top{
+	margin-top:31px;
+}
+.logo-div{
+	background-image:url("img/logo calado completo smattcom.png");
+	background-size:350px auto;
+	background-repeat:no-repeat;
+	background-position:left center;
+}
+.container-div-bloc-122-style{
+	height:76px;
+}
+.h1-134-margin-top{
+	margin-top:60px;
+}
+.divider-bloc-124-margin-top{
+	margin-top:43px;
+	margin-bottom:0px;
+}
+.img-mapa-papaya-margin-top{
+	margin-top:50px;
+}
+.row-bloc-127-margin-bottom{
+	margin-bottom:50px;
+	margin-top:0px;
+}
+.img-170-style{
+	width:600px;
+}
+.p-bloc-128-margin-top{
+	margin-top:54px;
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:16px;
+	margin-bottom:2px;
+}
+.p-bloc-128-style{
+	font-size:30px;
+	font-family:Montserrat;
+	font-weight:700;
+	margin-top:25px;
+}
+.container-div-bloc-128-margin-top{
+	margin-top:102px;
+}
+.p-296-style{
+	font-family:Montserrat;
+	font-weight:400;
+	margin-top:40px;
+}
+.btn-bloc-128-margin-top{
+	margin-top:20px;
+}
+.h1-bloc-124-margin-top{
+	margin-top:0px;
+}
+.btn-9-button-style{
+	width:100%;
+	padding-top:202px;
+	padding-bottom:202px;
+}
+.hover-tomate{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-tomate:hover{
+	background-color:#FF2F44;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.img-21-style{
+	width:200px;
+}
+.h3-productos-1-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:700;
+}
+.h3-3-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:14px;
+}
+.label-productos-1-style{
+	font-size:14px;
+	width:100%;
+	font-family:Montserrat;
+	font-weight:400;
+}
+.bloc-productos-1-margin-bottom{
+	margin-bottom:108px;
+}
+.btn-tomate{
+	background-color:#0667D0;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:16px;
+	color:#FFFFFF!important;
+}
+.btn-tomate:hover{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:16px;
+	color:#FEFFFE!important;
+	background-color:rgba(0,0,0,0.3);
+}
+.btn-tomate:active{
+	background-color:#0667D0;
+}
+.p-bloc-91-style{
+	font-family:Montserrat;
+	font-weight:700;
+	font-size:20px;
+}
+.precio{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:20px;
+	border-style:solid;
+	border-color:#FFFFFF!important;
+	border-radius:6px 6px 6px 6px;
+	border-width:1px 1px 1px 1px;
+}
+.row-productos-1-margin-top{
+	margin-top:20px;
+}
+.hover-btn-tomate{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-btn-tomate:hover{
+	background-color:#FF2F44;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+}
+.btn-precio-style{
+	width:100%;
+	margin-top:6px;
+}
+.hover-limon{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-limon:hover{
+	background-color:#95BD1A;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+h4{
+}
+.row-33-margin-top{
+	margin-top:23px;
+}
+.row-45-margin-top{
+	margin-top:32px;
+}
+.container-div-productos-1-margin-top{
+	margin-top:23px;
+}
+.container-div-0-productos-1-margin-top{
+	margin-top:23px;
+}
+.container-div-43460-margin-top{
+	margin-top:27px;
+}
+.hover-aguacate{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-aguacate:hover{
+	background-color:#749300;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.container-div-2035-margin-top{
+	margin-top:0px;
+}
+.hover-papaya{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-papaya:hover{
+	background-color:#FF8B16;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.row-89-margin-top{
+	margin-top:20px;
+}
+.row-bloc-90-style{
+	width:100%;
+}
+.row-bloc-90-margin-top{
+	margin-top:80px;
+}
+.h3-bloc-90-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:1px;
+	width:100%;
+	padding:6px 6px 6px 6px;
+}
+.vendedores{
+	font-family:"Montserrat";
+	font-weight:700;
+	border-style:solid;
+	text-align:center;
+	font-size:20px;
+	border-radius:6px 6px 6px 6px;
+	border-width:1px 1px 1px 1px;
+}
+.vendedores:hover{
+	color:#FEFFFE!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+}
+.img-papaya--style{
+	width:346px;
+	margin-top:0px;
+}
+.p-bloc-90-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:20px;
+	margin-top:10px;
+}
+.btn-bloc-90-margin-top{
+	margin-top:30px;
+	width:82.16%;
+	margin-left:2px;
+}
+h3{
+}
+.h1-bloc-76-margin-bottom{
+	margin-bottom:9px;
+	margin-top:1px;
+}
+.container-div-6897-margin-top{
+	margin-top:50px;
+}
+.img-82-margin-top{
+	margin-top:30px;
+	width:900px;
+}
+.h3-bloc-79-margin-left{
+	margin-left:242px;
+}
+.img-83-margin-top{
+	margin-top:40px;
+	width:900px;
+}
+.img-84-style{
+	width:900px;
+	margin-top:30px;
+}
+.img-img-papaya-1-j-margin-top{
+	margin-top:99px;
+}
+.p-153-style{
+	font-family:Montserrat;
+	font-weight:700;
+	font-size:20px;
+	margin-top:75px;
+	margin-left:269px;
+}
+.img-76-style{
+	width:900px;
+}
+.divider-0-margin-top{
+	margin-top:22px;
+}
+.p-155-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:700;
+	margin-left:275px;
+}
+.p-154-margin-bottom{
+	margin-bottom:50px;
+}
+.img-77-style{
+	width:900px;
+}
+.img-41939-style{
+	width:900px;
+}
+.p-158-style{
+	width:100%;
+}
+.img-80-margin-top{
+	margin-top:135px;
+}
+.container-div-49406-margin-top{
+	margin-top:20px;
+}
+.hover-mango{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-mango:hover{
+	background-color:#FFC000;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.p-140-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:400;
+	margin-top:50px;
+	margin-left:263px;
+}
+.divider-43074-margin-top{
+	margin-top:47px;
+}
+.h1-71-margin-top{
+	margin-top:0px;
+}
+.p-142-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:20px;
+	margin-top:50px;
+	margin-left:260px;
+}
+.divider-35351-margin-top{
+	margin-top:30px;
+}
+.img-grafica-ajo-style{
+	width:900px;
+}
+.img-75-style{
+	width:900px;
+}
+.p-141-margin-bottom{
+	margin-bottom:47px;
+}
+.bloc-31551-style{
+	width:9px;
+}
+.bloc-34438-style{
+	width:90px;
+}
+.bloc-5408-style{
+	width:900px;
+}
+.img-76-grafica-ajo-style{
+	width:900px;
+	margin-bottom:23px;
+}
+.hover-ajo{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-ajo:hover{
+	background-color:#DEC793;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.container-div-23220-margin-top{
+	margin-top:15px;
+}
+.hover-berenjena{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-berenjena:hover{
+	background-color:#5F498B;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.row-73-margin-top{
+	margin-top:5px;
+}
+.h4-margin-bottom{
+	margin-bottom:13px;
+}
+.container-div-31682-margin-top{
+	margin-top:14px;
+}
+.tabla-tomate-copy-1{
+	background-image:url("img/precios tomate.png");
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:90% auto;
+}
+.hover-cafe{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-cafe:hover{
+	background-color:#49281A;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.container-div-1558-margin-top{
+	margin-top:7px;
+}
+.p-bloc-59-margin-top{
+	margin-top:30px;
+}
+.p-bloc-61-margin-bottom{
+	margin-bottom:50px;
+}
+.hover-cebolla{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-cebolla:hover{
+	background-color:#D3BDA5;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.hover-pimiento{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-pimiento:hover{
+	background-color:#FF282C;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.hover-jalapeño{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-jalapeño:hover{
+	background-color:#4B693E;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.hover-tomatillo{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-tomatillo:hover{
+	background-color:#5FA000;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.btn-platano{
+	background-color:#0667D0;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:16px;
+	color:#FFFFFF!important;
+}
+.btn-platano:hover{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:16px;
+	color:#FEFFFE!important;
+	background-color:rgba(0,0,0,0.3);
+}
+.btn-platano:active{
+	background-color:#0667D0;
+}
+.hover-platano{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-platano:hover{
+	background-color:#FFBA27;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.container-div-26915-margin-top{
+	margin-top:14px;
+}
+.hover-pepino{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-pepino:hover{
+	background-color:#01795E;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.container-div-39046-margin-top{
+	margin-top:14px;
+}
+.hover-miel{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#DFDFDF!important;
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#000000!important;
+	font-size:20px;
+	border-width:1px 1px 1px 1px;
+}
+.hover-miel:hover{
+	background-color:#FFA210;
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:20px;
+	color:#FEFFFE!important;
+}
+.p-bloc-64-margin-top{
+	margin-top:29px;
+}
+.p-146-margin-top{
+	margin-top:30px;
+}
+.container-div-21582-margin-top{
+	margin-top:25px;
+}
+.h1-bloc-52-margin-top{
+	margin-top:0px;
+}
+.p-127-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:20px;
+}
+.p-126-margin-bottom{
+	margin-bottom:50px;
+}
+.divider-19792-margin-top{
+	margin-top:30px;
+}
+.p-129-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:20px;
+	margin-top:50px;
+}
+.divider-41415-margin-top{
+	margin-top:30px;
+}
+.img-76-margin-top{
+	margin-top:144px;
+}
+.img-grafica-pepino-style{
+	width:900px;
+}
+.img-73-style{
+	width:900px;
+}
+.h1-bloc-47-margin-top{
+	margin-top:0px;
+}
+.p-114-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:20px;
+	margin-top:30px;
+}
+.divider-27845-margin-top{
+	margin-top:24px;
+}
+.p-116-margin-top{
+	margin-top:40px;
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:400;
+}
+.divider-45280-margin-top{
+	margin-top:30px;
+}
+.img-bloc-49-style{
+	width:900px;
+}
+.img-bloc-50-style{
+	width:900px;
+}
+.img-bloc-51-style{
+	width:900px;
+}
+.container-div-18874-margin-top{
+	margin-top:34px;
+}
+.h1-bloc-42-margin-top{
+	margin-top:0px;
+}
+.p-101-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:700;
+	margin-top:50px;
+}
+.divider-49920-margin-top{
+	margin-top:27px;
+}
+.p-103-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:700;
+	margin-top:50px;
+}
+.divider-9548-margin-top{
+	margin-top:30px;
+}
+.h1-53-margin-top{
+	margin-top:30px;
+}
+.h1-54-margin-top{
+	margin-top:0px;
+}
+.img-72-margin-top{
+	margin-top:154px;
+}
+.img-bloc-123-style{
+	width:900px;
+}
+.p-75-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:700;
+	margin-top:50px;
+	margin-left:256px;
+}
+.divider-1160-margin-top{
+	margin-top:30px;
+}
+.img-bloc-44-style{
+	width:900px;
+}
+.img-bloc-45-style{
+	width:900px;
+}
+.img-bloc-46-style{
+	width:900px;
+}
+.row-bloc-47-margin-top{
+	margin-top:71px;
+}
+.p-77-style{
+	font-family:Montserrat;
+	font-weight:400;
+	font-size:20px;
+	margin-top:50px;
+	margin-left:265px;
+}
+.divider-33178-margin-top{
+	margin-top:30px;
+}
+.img-67-margin-top{
+	margin-top:109px;
+}
+.h1-8203-margin-top{
+	margin-top:50px;
+}
+.img-grafica-limon-style{
+	width:900px;
+}
+.img-64-style{
+	width:900px;
+}
+.img-63-style{
+	width:900px;
+}
+.h1-bloc-37-margin-top{
+	margin-top:0px;
+}
+.p-95-style{
+	font-size:20px;
+	margin-top:50px;
+	margin-left:234px;
+}
+.divider-4204-margin-top{
+	margin-top:30px;
+}
+.p-97-style{
+	font-size:20px;
+	margin-top:50px;
+	margin-left:256px;
+}
+.divider-39435-margin-top{
+	margin-top:30px;
+}
+.h1-46-margin-top{
+	margin-top:-1px;
+}
+.img-grafica-chile-style{
+	width:900px;
+}
+.img-74-style{
+	width:900px;
+}
+.img-75-grafica-chile-style{
+	width:900px;
+	margin-top:30px;
+}
+.row-185-margin-top{
+	margin-top:99px;
+}
+.h1-bloc-27-margin-top{
+	margin-top:0px;
+}
+.p-62-style{
+	font-size:20px;
+	margin-top:50px;
+	margin-left:264px;
+}
+.divider-27892-margin-top{
+	margin-top:30px;
+}
+.p-64-style{
+	font-size:20px;
+	margin-top:50px;
+	margin-left:251px;
+}
+.divider-45763-margin-top{
+	margin-top:30px;
+}
+.row-151-margin-top{
+	margin-top:50px;
+}
+.h1-34-margin-top{
+	margin-top:0px;
+}
+.h1-bloc-22-margin-top{
+	margin-top:0px;
+}
+.p-49-style{
+	font-size:20px;
+	margin-top:50px;
+}
+.p-51-style{
+	font-size:20px;
+	margin-top:49px;
+}
+.divider-23247-margin-top{
+	margin-top:30px;
+}
+.divider-49587-margin-top{
+	margin-top:30px;
+}
+.row-136-margin-top{
+	margin-top:93px;
+}
+.img-bloc-24-style{
+	width:207px;
+	margin-top:124px;
+}
+.img-bloc-25-style{
+	width:900px;
+}
+.img-bloc-26-style{
+	width:900px;
+}
+.h1-bloc-12-margin-top{
+	margin-top:100px;
+}
+.p-23-style{
+	font-size:20px;
+	font-family:Montserrat;
+	font-weight:400;
+	margin-top:50px;
+	margin-left:259px;
+}
+.divider-35650-margin-top{
+	margin-top:30px;
+}
+.p-25-style{
+	font-family:Montserrat;
+	font-weight:700;
+	font-size:20px;
+	margin-top:50px;
+	margin-left:244px;
+}
+.divider-42878-margin-top{
+	margin-top:30px;
+}
+.h1-17-margin-top{
+	margin-top:0px;
+}
+.img-telefonos-head-style{
+	width:458px;
+}
+.container-div-bloc-4-margin-top{
+	margin-top:18px;
+}
+.container-div-0-bloc-4-margin-top{
+	margin-top:21px;
+}
+.container-div-48201-margin-top{
+	margin-top:23px;
+}
+.img-canacintra-lo-style{
+	width:100px;
+}
+.img-aapps-lo-style{
+	width:100px;
+}
+.img-sefodeco-lo-style{
+	width:100px;
+}
+.img-tapachula-lo-style{
+	width:100px;
+}
+.btn- ver-más-style{
+	width:80%;
+}
+.img-tomate-head-style{
+	width:280px;
+}
+.img-bloc-15-style{
+	width:481px;
+	margin-top:51px;
+}
+.img-253-style{
+	width:470px;
+}
+.img-31661-style{
+	width:333px;
+	margin-top:80px;
+}
+.p-43-style{
+	font-size:20px;
+	margin-left:233px;
+	margin-top:49px;
+}
+.p-45-style{
+	font-size:20px;
+	margin-top:50px;
+	margin-left:258px;
+}
+.row-126-margin-bottom{
+	margin-bottom:50px;
+}
+.img-69-margin-top{
+	margin-top:0px;
+}
+.img-grafica-fresa-style{
+	width:900px;
+}
+.img-grafica-fressa-style{
+	width:900px;
+}
+.p-42-margin-top{
+	margin-top:100px;
+}
+.p-244-style{
+	font-size:20px;
+	margin-left:241px;
+}
+.img-tabulador-miel-abeja-apis{
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto auto;
+	height:919px;
+	background-image:url("img/tabulador miel  web.png");
+}
+.img-tabulador-miel-abeja-apis:hover{
+	;
+}
+.bloc-0-bloc-12-margin-top:active{
+}
+.bloc-0-bloc-12-margin-top:hover{
+}
+.img-pepino-solo-style{
+	width:466px;
+}
+.img-img-ajo-solo-p-style{
+	width:489px;
+}
+.img-bloc-60-style{
+	width:388px;
+}
+.img-bloc-132-style{
+	width:381px;
+}
+.img-limon-head-style{
+	width:406px;
+	margin-top:20px;
+}
+.img-bloc-40-style{
+	width:373px;
+}
+.img-113-style{
+	width:334px;
+}
+.img-123-style{
+	width:411px;
+}
+.img-83-style{
+	width:386px;
+}
+.numero-compradores-y-vendedores{
+	font-family:"Montserrat";
+	font-weight:700;
+	font-size:15px;
+}
+.h1-bloc-250-margin-top{
+	margin-top:30px;
+}
+.h1-bloc-251-margin-top{
+	margin-top:31px;
+}
+.img-bloc-14-style{
+	width:900px;
+}
+.img-56-style{
+	width:900px;
+}
+.img-bloc-16-style{
+	width:900px;
+	margin-top:35px;
+}
+.img-bloc-29-style{
+	width:900px;
+}
+.img-bloc-30-style{
+	width:900px;
+}
+.img-bloc-31-style{
+	width:900px;
+}
+.img-grafica-cafe-style{
+	width:900px;
+}
+.img-167-grafica-cafe-style{
+	width:900px;
+}
+.img-168-style{
+	width:900px;
+}
+.row-bloc-140-margin-bottom{
+	margin-bottom:50px;
+}
+.titulo-pagina-2{
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#FFFFFF!important;
+	text-align:center;
+	font-size:61px;
+}
+.sub-pagina-2{
+	color:#FEFFFE!important;
+	text-align:center;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:25px;
+	letter-spacing:2px;
+}
+.h1-148-margin-top{
+	margin-top:60px;
+}
+.p-bloc-6-style{
+	width:86.84%;
+}
+.p-bloc-7-margin-top{
+	margin-top:25px;
+}
+.p-bloc-10-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-15-style{
+	font-size:25px;
+	margin-bottom:1px;
+}
+.p-bloc-20-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-25-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-102-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-40-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-146-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-45-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-50-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-55-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-60-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-132-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-bloc-75-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.p-388-style{
+	font-size:25px;
+}
+.p-bloc-245-style{
+	font-size:25px;
+	margin-bottom:0px;
+}
+.divider-1177-margin-top{
+	margin-top:30px;
+}
+.container-div-11114-margin-top{
+	margin-top:30px;
+}
+.p-287-margin-top{
+	margin-top:50px;
+}
+.img-193-style{
+	width:194px;
+}
+.row-410-margin-bottom{
+	margin-bottom:50px;
+	margin-top:30px;
+}
+.btn-141-style{
+	width:100%;
+}
+.btn-142-style{
+	width:96.83%;
+	margin-top:77px;
+}
+.container-div-9935-margin-top{
+	margin-top:60px;
+}
+.p-369-margin-top{
+	margin-top:50px;
+	font-family:Montserrat;
+	font-weight:500;
+}
+.btn-145-style{
+	width:66.4%;
+	margin-top:25px;
+}
+.img-comerciali-style{
+	width:45px;
+}
+.p-361-margin-top{
+	margin-top:20px;
+}
+.img-consul-style{
+	width:40px;
+}
+.p-362-margin-top{
+	margin-top:18px;
+}
+.p-363-margin-top{
+	margin-top:22px;
+}
+.img-235-style{
+	width:45px;
+}
+.p-364-margin-top{
+	margin-top:10px;
+}
+.img-invitati-style{
+	width:45px;
+}
+.p-365-margin-top{
+	margin-top:29px;
+}
+.img-237-style{
+	width:73px;
+}
+.p-366-margin-top{
+	margin-top:14px;
+}
+.img-238-style{
+	width:126px;
+}
+.p-367-margin-top{
+	margin-top:29px;
+}
+.img-239-style{
+	width:45px;
+}
+.p-368-margin-top{
+	margin-top:30px;
+}
+.p-1809-margin-top{
+	margin-top:30px;
+}
+.img-184-style{
+	width:45px;
+}
+.p-288-margin-top{
+	margin-top:29px;
+}
+.img-185-style{
+	width:45px;
+}
+.p-289-margin-top{
+	margin-top:23px;
+}
+.btn-outline-semsagro{
+	background-color:transparent;
+	border-style:solid;
+	border-color:#FFFFFF!important;
+	font-size:16px;
+	color:#FFFFFF!important;
+}
+.btn-outline-semsagro:hover{
+	font-size:16px;
+	background-color:#CEC0D9;
+	border-style:solid;
+	border-color:#CEC0D9!important;
+	color:#4D3C6E!important;
+}
+.img-45-style{
+	width:429px;
+	margin-top:70px;
+	margin-bottom:70px;
+}
+.pading-c1{
+	padding-right:15%;
+	padding-left:15%;
+}
+.h1-bloc-24-style{
+	margin-top:34px;
+	color:#FFFFFF!important;
+}
+.p-bloc-24-style{
+	font-size:17px;
+	color:#FFFFFF!important;
+}
+.container-div-margin-top{
+	margin-top:30px;
+}
+.img-57-style{
+	width:59px;
+	margin-top:30px;
+}
+.p-44-margin-top{
+	margin-top:30px;
+	margin-bottom:83px;
+	color:#FFFFFF!important;
+	font-family:Montserrat;
+	font-weight:500;
+}
+.h1-21-style{
+	margin-top:50px;
+}
+.row-72-margin-bottom{
+	margin-bottom:50px;
+	margin-top:60px;
+}
+.p-bloc-38-margin-top{
+	margin-top:31px;
+	color:#FFFFFF!important;
+	font-family:Montserrat;
+	font-weight:500;
+}
+.card-body-bloc-38-margin-bottom{
+	margin-bottom:-1px;
+	height:364px;
+}
+.card-body-bloc-38-style{
+	height:361px;
+}
+.card-body-25-style{
+	height:365px;
+}
+.btn-54-style{
+	width:47.81%;
+	margin-bottom:30px;
+}
+.btn-morado{
+	background-color:#503C71;
+	font-size:16px;
+}
+.btn-morado:hover{
+	background-color:transparent;
+	font-size:16px;
+	color:#4D3C6E!important;
+	border-style:solid;
+	border-color:#4D3C6E!important;
+}
+.hover-card-semsagro:hover{
+	box-shadow:0px 23px 25px rgba(77,61,110,0.3);
+	opacity:7;
+}
+.icon-margin-top{
+	margin-top:30px;
+}
+.h1-21-margin-top{
+	margin-top:27px;
+	text-align:center;
+	font-weight:800;
+	color:#533A74!important;
+	font-size:25px;
+}
+.h1-22-style{
+	text-align:center;
+	color:#533A74!important;
+	font-weight:900;
+	margin-top:33px;
+}
+.h3-bloc-38-margin-top{
+	margin-top:50px;
+	text-align:center;
+	font-size:28px;
+	color:#503C71!important;
+	font-weight:400;
+}
+.p-bloc-38-style{
+	font-size:18px;
+	width:100%;
+	margin-top:33px;
+}
+.card-body-26-style{
+	height:711px;
+}
+.img-bilboard-2-margin-top{
+	width:372px;
+}
+.img-bloc-38-style{
+	width:295px;
+	margin-top:20px;
+}
+.card-body-27-style{
+	height:713px;
+}
+.btn-regístrate-style{
+	width:48.42%;
+}
+.titulos-semsagro{
+	font-size:40px;
+	color:#21102D!important;
+}
+.titulos-cards-generales{
+	font-size:32px;
+	color:#FFFFFF!important;
+}
+.btn-49-style{
+	width:100%;
+}
+.h1-bloc-38-margin-top{
+	margin-top:100px;
+	margin-bottom:30px;
+}
+.p-bloc-41-style{
+	font-size:17px;
+}
+.p-58-style{
+	font-size:17px;
+}
+.p-59-bloc-41-style{
+	font-size:17px;
+	margin-bottom:50px;
+	margin-top:0px;
+}
+.btn-margin-left{
+	width:18.35%;
+}
+.btn-cancel{
+	background-color:transparent;
+	color:#919191!important;
+	font-size:16px;
+}
+.btn-cancel:hover{
+	color:#4D3C6E!important;
+	font-size:16px;
+	background-color:transparent;
+	text-align:center;
+}
+.h3-154-margin-top{
+	margin-top:-1px;
+	color:#FEFFFE!important;
+}
+.btn-bloc-25-style{
+	width:51.36%;
+}
+.img-bloc-261-margin-top{
+	margin-top:31px;
+}
+.h1-157-style{
+	font-family:"helvetica";
+}
+.img-362-style{
+	width:222px;
+}
+.p-490-margin-top{
+	margin-top:20px;
+}
+.btn-215-style{
+	width:100%;
+	font-size:16px;
+}
+.row-591-style{
+	margin-top:40px;
+}
+.row-592-margin-top{
+	margin-top:20px;
+}
+.p-bloc-266-margin-top{
+	margin-top:30px;
+}
+.p-491-margin-top{
+	margin-top:31px;
+}
+.p-492-margin-top{
+	margin-top:21px;
+}
+.p-493-margin-top{
+	margin-top:25px;
+}
+.p-494-margin-top{
+	margin-top:30px;
+}
+.p-495-margin-top{
+	margin-top:27px;
+}
+.p-496-margin-top{
+	margin-top:26px;
+}
+.p-497-margin-top{
+	margin-top:23px;
+}
+.p-500-margin-top{
+	margin-top:49px;
+}
+.h4-107-style{
+	font-family:Montserrat;
+	font-weight:500;
+	margin-top:49px;
+}
+.h4-bloc-78-style{
+	font-family:Montserrat;
+	margin-top:50px;
+}
+.h4-bloc-180-margin-top{
+	margin-top:50px;
+}
+.p-17-margin-bottom{
+	margin-bottom:0px;
+	margin-top:100px;
+}
+.h4-20-style{
+	font-family:Montserrat;
+	font-weight:500;
+	margin-top:25px;
+}
+.btn-27-margin-top{
+	margin-top:25px;
+	width:49.74%;
+}
+.h1-bloc-12-margin-bottom{
+	margin-bottom:2px;
+	margin-top:100px;
+}
+.p-bloc-14-margin-bottom{
+	margin-bottom:37px;
+	margin-top:49px;
+}
+.p-bloc-22-margin-bottom{
+	margin-bottom:50px;
+}
+.p-bloc-37-margin-bottom{
+	margin-bottom:51px;
+}
+.p-bloc-32-margin-bottom{
+	margin-bottom:50px;
+}
+.p-bloc-42-margin-bottom{
+	margin-bottom:50px;
+}
+.p-bloc-47-margin-bottom{
+	margin-bottom:50px;
+}
+.p-bloc-52-margin-bottom{
+	margin-bottom:50px;
+}
+.p-bloc-57-margin-bottom{
+	margin-bottom:50px;
+}
+.p-bloc-62-margin-bottom{
+	margin-bottom:50px;
+}
+.h1-75-margin-bottom{
+	margin-bottom:50px;
+}
+.p-bloc-119-margin-top{
+	margin-bottom:50px;
+}
+.p-bloc-246-margin-bottom{
+	margin-bottom:50px;
+}
+.p-bloc-44-margin-top{
+	margin-top:40px;
+}
+.btn-bloc-6-margin-top{
+	margin-top:50px;
+	width:44.39%;
+}
+.label-margin-top{
+	margin-top:10px;
+}
+.btn-247-style{
+	width:100%;
+}
+.p-cards-blog-margin-top{
+	margin-top:15px;
+}
+.p-cards-blog-margin-bottom{
+	margin-bottom:0px;
+	margin-top:7px;
+	margin-left:-22px;
+}
+.label-label-style{
+	width:100%;
+}
+.txt-categoria{
+	background-color:#C1DFFF;
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#0667D0!important;
+	font-size:14px;
+	text-align:center;
+	padding:3px 3px 3px 3px;
+	border-radius:200px 200px 200px 200px;
+}
+.img-cards-blog{
+	width:100%;
+}
+.label-categoria-style{
+	width:100%;
+}
+.container-div-margin-left{
+	margin-left:-38px;
+}
+.btn-link{
+	background-color:transparent;
+	font-size:16px;
+	color:#0069D7!important;
+	font-family:"Montserrat";
+	font-weight:400;
+}
+.btn-link:hover{
+	background-color:#0069D7;
+	font-size:16px;
+	font-family:"Montserrat";
+	font-weight:400;
+	color:#FEFFFF!important;
+}
+.btn-248-style{
+	width:100%;
+}
+.row-cards-blog-margin-top{
+	margin-top:25px;
+}
+.container-div-cards-blog-margin-top{
+	margin-top:50px;
+}
+.btn-bloc-0-margin-top{
+	margin-top:50px;
+	width:100%;
+}
+.row-bloc-0-margin-top{
+	margin-top:-1px;
+}
+.btn-261-style{
+	width:88.29%;
+	margin-top:25px;
+}
+.btn-style{
+	margin-top:25px;
+}
+.txt-banner-withe{
+	font-family:"Montserrat";
+	font-weight:700;
+	color:#FEFFFF!important;
+	font-size:30px;
+}
+.txt-banner-withe:hover{
+	font-family:"Montserrat";
+	font-weight:700;
+}
+.txtcuerpo-copy-1{
+	font-family:"Montserrat";
+	font-weight:400;
+	font-size:16px;
+	color:#555655!important;
+}
+.h1-bloc-4-margin-top{
+	margin-top:25px;
+}
+.img-logo-slogan-5x-style{
+	width:359px;
+	margin-bottom:50px;
+}
+.p-11432-margin-top{
+	margin-top:63px;
+}
+.img-iica-logo-style{
+	width:203px;
+	margin-top:15px;
+}
+.btn-bloc-78-margin-top{
+	margin-top:0px;
+	width:48.51%;
+}
+.p-bloc-180-margin-bottom{
+	margin-bottom:50px;
+}
+.h1-bloc-205-margin-top{
+	margin-top:0px;
+}
+.row-bloc-10-margin-bottom{
+	margin-bottom:25px;
+}
+.p-15-margin-bottom{
+	margin-bottom:50px;
+	margin-top:100px;
+}
+.h4-20-margin-top{
+	margin-top:50px;
+	font-family:Montserrat;
+	font-weight:700;
+}
+.btn-bloc-10-style{
+	width:100%;
+	padding-top:172px;
+	padding-bottom:172px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-saladette{
+	background-image:url("img/Banner tomate saladette DK.png");
+}
+.banner-saladette:hover{
+	background-image:url("img/Banner tomate saladette DK.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.img-bloc-10-margin-top{
+	margin-top:50px;
+	width:100px;
+}
+.p-bloc-10-margin-top{
+	margin-top:25px;
+	margin-bottom:0px;
+}
+.banner-fresa{
+	background-image:url("img/banner fresa dk.png");
+}
+.banner-fresa:hover{
+	background-image:url("img/banner fresa dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.btn-bloc-15-margin-top{
+	margin-top:25px;
+}
+.banner-aguacate{
+	background-image:url("img/Banner aguacate saladette DK.png");
+}
+.banner-aguacate:hover{
+	background-image:url("img/Banner aguacate saladette DK.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.p-bloc-27-margin-bottom{
+	margin-bottom:50px;
+}
+.banner-cebolla{
+	background-image:url("img/Banner cebolla dk.png");
+}
+.banner-cebolla:hover{
+	background-image:url("img/Banner cebolla dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-limon{
+	background-image:url("img/Banner limon dk 3.png");
+}
+.banner-limon:hover{
+	background-image:url("img/Banner limon dk 3.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-saladette-copy-1{
+	background-image:url("img/Banner limon dk.png");
+}
+.btn-bloc-10-style:hover{
+	background-image:url("img/Banner limon dk.png");
+}
+.banner-jalapeño{
+	background-image:url("img/Banner jalapeño dk.png");
+}
+.banner-jalapeño:hover{
+	background-image:url("img/Banner jalapeño dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.btn-bloc-40-margin-top{
+	margin-top:25px;
+}
+.banner-tomatillo{
+	background-image:url("img/Banner tomatillo dk.png");
+}
+.banner-tomatillo:hover{
+	background-image:url("img/Banner tomatillo dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-limon-copy-1{
+	background-image:url("img/Banner tomatillo dk.png");
+}
+.banner-platano{
+	background-image:url("img/Banner platano dk.png");
+}
+.banner-platano:hover{
+	background-image:url("img/Banner platano dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-pepino{
+	background-image:url("img/banner pepino dk.png");
+}
+.banner-pepino:hover{
+	background-image:url("img/banner pepino dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-tomatillo-copy-1{
+	background-image:url("img/banner pepino dk.png");
+}
+.banner-ajo{
+	background-image:url("img/banner ajo dk.png");
+}
+.banner-ajo:hover{
+	background-image:url("img/banner ajo dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-berenjena{
+	background-image:url("img/Banner cafe dk.png");
+}
+.banner-berenjena:hover{
+	background-image:url("img/Banner berenjena dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-cafe{
+	background-image:url("img/Banner cafe dk.png");
+}
+.banner-cafe:hover{
+	background-image:url("img/Banner cafe dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-mango{
+	background-image:url("img/Banner mango dk.png");
+}
+.banner-mango:hover{
+	background-image:url("img/Banner mango dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-pepino-copy-1{
+	background-image:url("img/Banner mango dk.png");
+}
+.banner-papaya{
+	background-image:url("img/Banner papaya dk.png");
+}
+.banner-papaya:hover{
+	background-image:url("img/Banner papaya dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.banner-miel{
+	background-image:url("img/Banner miel dk.png");
+}
+.banner-miel:hover{
+	background-image:url("img/Banner miel dk.png");
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+
+/* = Colour
+-------------------------------------------------------------- */
+
+/* Background colour styles */
+
+.bgc-true-blue{
+	background-color:#0667D0;
+}
+.bgc-deep-carmine-pink{
+	background-color:#FF282C;
+}
+.bgc-heart-gold{
+	background-color:#749300;
+}
+.bgc-pale-chestnut{
+	background-color:#D3BDA5;
+}
+.bgc-apple-green{
+	background-color:#95BD1A;
+}
+.bgc-fern-green{
+	background-color:#4B693E;
+}
+.bgc-kelly-green{
+	background-color:#5FA000;
+}
+.bgc-saffron{
+	background-color:#FFBA27;
+}
+.bgc-tropical-rain-forest{
+	background-color:#01795E;
+}
+.bgc-pale-gold{
+	background-color:#DEC793;
+}
+.bgc-dark-lavender{
+	background-color:#5F498B;
+}
+.bgc-bistre{
+	background-color:#49281A;
+}
+.bgc-amber{
+	background-color:#FFC000;
+}
+.bgc-carrot-orange{
+	background-color:#FF8B16;
+}
+.bgc-true-blue-2{
+	background-color:#0667D0;
+}
+.bgc-white{
+	background-color:#FFFFFF;
+}
+.bgc-white-2{
+	background-color:#FFFFFF;
+}
+.bgc-dark-tangerine{
+	background-color:#FFA210;
+}
+.bgc-dark-slate-blue{
+	background-color:#4C3D6D;
+}
+.bgc-dark-slate-blue-2{
+	background-color:#554975;
+}
+.bgc-anti-flash-white{
+	background-color:#F0ECF3;
+}
+.bgc-dark-slate-blue-3{
+	background-color:#4D3C6E;
+}
+.bgc-ao-english{
+	background-color:#007D00;
+}
+.bgc-ghost-white{
+	background-color:#F6F7FB;
+}
+
+/* Text colour styles */
+
+.tc-white{
+	color:#FFFFFF!important;
+}
+.tc-dark-jungle-green{
+	color:#1E1F1E!important;
+}
+.tc-davys-grey{
+	color:#5E5E5E!important;
+}
+.tc-dark-slate-blue{
+	color:#4C3D6D!important;
+}
+.tc-true-blue{
+	color:#0667D0!important;
+}
+.tc-davys-grey-2{
+	color:#555655!important;
+}
+
+/* Button colour styles */
+
+.btn-electric-green{
+	background:#00C800;
+	color:#FFFFFF!important;
+}
+.btn-electric-green:hover{
+	background:#00a000!important;
+	color:#FFFFFF!important;
+}
+
+/* Link colour styles */
+
+.ltc-white{
+	color:#FFFFFF!important;
+}
+.ltc-white:hover{
+	color:#cccccc!important;
+}
+.ltc-white-2{
+	color:#FFFFFF!important;
+}
+.ltc-white-2:hover{
+	color:#cccccc!important;
+}
+.ltc-true-blue{
+	color:#0667D0!important;
+}
+.ltc-true-blue:hover{
+	color:#0552a6!important;
+}
+
+/* Icon colour styles */
+
+.icon-white{
+	color:#FFFFFF!important;
+	border-color:#FFFFFF!important;
+}
+.icon-white-2{
+	color:#FFFFFF!important;
+	border-color:#FFFFFF!important;
+}
+.icon-light-slate-gray{
+	color:#798796!important;
+	border-color:#798796!important;
+}
+.icon-true-blue{
+	color:#0667D0!important;
+	border-color:#0667D0!important;
+}
+.icon-dark-slate-blue{
+	color:#4C3D6D!important;
+	border-color:#4C3D6D!important;
+}
+
+/* Bloc image backgrounds */
+
+.bg-como-funciona-header{
+	background-image:url("https://s3-us-west-1.amazonaws.com/smattcom.com/como-funciona/como-funciona-header.png");
+}
+.bg-productos-agricolas-header{
+	background-image:url("https://s3-us-west-1.amazonaws.com/smattcom.com/productos-agricolas/productos-agricolas-header.png");
+}
+.bg-alianzas-header{
+	background-image:url("https://s3-us-west-1.amazonaws.com/smattcom.com/alianzas/alianzas-header.png");
+}
+.bg-descarga-header{
+	background-image:url("https://s3-us-west-1.amazonaws.com/smattcom.com/descarga/descarga-header.png");
+}
+.bg-header-contacto-2{
+	background-image:url("https://s3-us-west-1.amazonaws.com/smattcom.com/contacto/header-contacto_2.png");
+}
+
+
+
+/* = Mobile adjustments 
+-------------------------------------------------------------- */
+@media (max-width: 1024px)
+{
+    .bloc{
+        padding-left: 20px; 
+        padding-right: 20px;  
+    }
+    .bloc.full-width-bloc, .bloc-tile-2.full-width-bloc .container, .bloc-tile-3.full-width-bloc .container, .bloc-tile-4.full-width-bloc .container{
+        padding-left: 0; 
+        padding-right: 0;  
+    }
+}
+@media (max-width: 991px)
+{
+    .container{width:100%;}
+    .page-container, #hero-bloc{overflow-x: hidden;position: relative;} /* Prevent unwanted side scroll on mobile */
+    .bloc{padding-left: constant(safe-area-inset-left);padding-right: constant(safe-area-inset-right);} /* iPhone X Notch Support*/
+    .bloc-group, .bloc-group .bloc{display:block;width:100%;}
+}
+@media (max-width: 767px)
+{
+    .page-container{
+        overflow-x: hidden;
+        position:relative;
+    }
+    .bloc-tile-2 .container, .bloc-tile-3 .container, .bloc-tile-4 .container{
+        padding-left:0;padding-right:0;
+    }
+    .a-block{
+        padding:0 10px;
+    }
+    .btn-dwn{
+       display:none; 
+    }
+    .voffset{
+        margin-top:5px;
+    }
+    .voffset-md{
+        margin-top:20px;
+    }
+    .voffset-lg{
+        margin-top:30px;
+    }
+    form{
+        padding:5px;
+    }
+    .close-lightbox{
+        display:inline-block;
+    }
+    .blocsapp-device-iphone5{
+	   background-size: 216px 425px;
+	   padding-top:60px;
+	   width:216px;
+	   height:425px;
+    }
+    .blocsapp-device-iphone5 img{
+	   width: 180px;
+	   height: 320px;
+    }
+}
+
+@media (max-width: 991px){
+	.row-style{
+		width:100%;
+		margin-left:1px;
+	}
+	.row-margin-left{
+		margin-left:54px;
+	}
+	.h5-margin-bottom{
+		width:100%;
+	}
+	.card-body-style{
+		width:100%;
+		margin-top:10px;
+	}
+	.logo-navbar{
+		width:140px;
+	}
+	.card-margin-bottom{
+		margin-bottom:20px;
+	}
+	.card-como-funciona-margin-bottom{
+		margin-bottom:20px;
+	}
+	.card-body-como-funciona-margin-top{
+		margin-top:20px;
+	}
+	.card-margin-top{
+		margin-top:0px;
+	}
+	.card-3-margin-bottom{
+		margin-bottom:1px;
+	}
+	.card-como-funciona-margin-top{
+		margin-top:21px;
+	}
+	.txt-titulo-web{
+		font-size:55px;
+	}
+	.linea-md{
+		margin-left:322px;
+	}
+	.container-div-margin-top{
+		margin-top:20px;
+	}
+	.bloc-style{
+		margin-top:20px;
+	}
+	.img-nota-3-margin-top{
+		margin-top:0px;
+	}
+	.card-blog-md{
+		margin-left:221px;
+		margin-top:20px;
+	}
+	.btn-azul{
+		font-size:14px;
+		width:250px;
+	}
+	.btn-button-style{
+		width:83.43%;
+		margin-left:61px;
+	}
+	.btn-margin-top{
+		width:100%;
+	}
+	.h3-bloc-4-style{
+		font-size:13px;
+	}
+	.img-header-home{
+		background-size:auto auto;
+	}
+	.h4-style{
+		font-size:20px;
+	}
+	.btn-5-style{
+		width:45.6%;
+	}
+	.h1-3-margin-top{
+		margin-top:92px;
+	}
+	.img-comprar-vender-style{
+		background-size:auto auto;
+		width:250px;
+		height:356px;
+	}
+	.h1-5-margin-top{
+		margin-top:38px;
+	}
+	.imgs-como-funciona{
+		width:90%;
+		height:90%;
+	}
+	.img-oportunidades{
+		width:275px;
+		height:319px;
+	}
+	.img-mensajes-privados{
+		width:243px;
+		height:373px;
+	}
+	.row-12-margin-top{
+		margin-top:130px;
+	}
+	.img-segurid-style{
+		margin-top:49px;
+		width:280px;
+	}
+	.subasta{
+		padding-left:70px;
+	}
+	.encuentra-oportunidades{
+		padding-right:70px;
+	}
+	.consulta-precios{
+		padding-left:70px;
+	}
+	.mensajes-privados{
+		padding-right:70px;
+	}
+	.seguridad-smattcom{
+		padding-left:70px;
+	}
+	.btn-22251-style{
+		width:100%;
+		margin-top:25px;
+	}
+	.p-2-bloc-2-margin-top{
+		margin-bottom:0px;
+	}
+	.p-2-margin-bottom{
+		margin-bottom:0px;
+	}
+	.h1-12876-margin-top{
+		margin-top:70px;
+	}
+	.txtcuerpo{
+		padding-right:30px;
+		padding-bottom:30px;
+		padding-left:0px;
+	}
+	.card-bloc-4-margin-top{
+		margin-top:0px;
+	}
+	.bloc-productos-1-margin-top{
+		margin-top:-1px;
+	}
+	.bloc-0-productos-1-margin-top{
+		margin-top:15px;
+	}
+	.h3-margin-left{
+		margin-left:201px;
+		width:41.86%;
+	}
+	.h3-style{
+		width:100%;
+	}
+	.h2-margin-top{
+		margin-top:40px;
+	}
+	.btn-bloc-53-style{
+		width:100%;
+	}
+	.btn-83-style{
+		width:100%;
+	}
+	.card-body-bloc-54-style{
+		margin-top:0px;
+	}
+	.bloc-bloc-54-margin-top{
+		margin-top:20px;
+	}
+	.logo{
+		;
+	}
+	.img-canacint-margin-left{
+		margin-left:260px;
+	}
+	.h3-margin-bottom{
+		margin-left:308px;
+		margin-top:0px;
+	}
+	.p-115-margin-top{
+		margin-left:0px;
+	}
+	.h1-canacintra-margin-top{
+		margin-top:60px;
+	}
+	.btn-91-style{
+		margin-left:0px;
+		width:45.68%;
+		margin-top:29px;
+	}
+	.btn-enviar-margin-top{
+		width:100%;
+	}
+	.paddin-formulario{
+		padding:50px 50px 50px 50px;
+	}
+	.txt-subtitulo-web{
+		font-size:18px;
+	}
+	.btn-bloc-77-style{
+		margin-left:164px;
+		width:59.4%;
+	}
+	.img-bloc-77-margin-top{
+		margin-top:40px;
+	}
+	.celulares-md{
+		width:70%;
+	}
+	.h1-bloc-77-margin-top{
+		margin-top:56px;
+	}
+	.h3-73-style{
+		margin-left:127px;
+	}
+	.btn-leer-nota-style{
+		margin-top:0px;
+	}
+	.bloc-bloc-84-margin-top{
+		margin-top:20px;
+	}
+	.btn-siguiente-style{
+		width:98.84%;
+	}
+	.container-div-bloc-84-style{
+		width:72.93%;
+	}
+	.btn-118-margin-top{
+		width:100%;
+		margin-left:-1px;
+	}
+	.p-style{
+		width:76.74%;
+		margin-left:85px;
+	}
+	.btn-button-margin-top{
+		width:69.22%;
+		margin-left:103px;
+	}
+	.img-logo-blog-margin-left{
+		margin-left:108px;
+	}
+	.bloc-como-funciona-margin-top{
+		margin-top:20px;
+	}
+	.pading-txt-header-home{
+		padding-left:50px;
+	}
+	.img-1-style{
+		width:250px;
+		margin-top:59px;
+	}
+	.p-bloc-87-style{
+		width:35.02%;
+	}
+	.row-bloc-87-style{
+		width:68.11%;
+	}
+	.h3-margin-top{
+		width:100%;
+	}
+	.h6-margin-top{
+		margin-left:0px;
+	}
+	.img-blog-1-style{
+		width:676px;
+	}
+	.link-margin-bottom{
+		margin-bottom:0px;
+	}
+	.h1-136-style{
+		width:66.57%;
+	}
+	.p-194-style{
+		width:65.18%;
+	}
+	.h1-bloc-112-margin-top{
+		width:67.13%;
+		text-align:left;
+	}
+	.p-bloc-112-style{
+		width:65.18%;
+	}
+	.btn-147-style{
+		width:100%;
+		margin-top:-1px;
+	}
+	.tabla-tomate{
+		background-image:url("img/precios tomate.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.card-body-bloc-12-margin-left{
+		;
+	}
+	.tabla-pimiento{
+		background-image:url("img/precios tomate.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.img-bloc-122-margin-top{
+		margin-top:38px;
+	}
+	.h1-bloc-116-style{
+		margin-top:51px;
+	}
+	.tabla-pimiento-2{
+		background-image:url("img/pimiento web.png");
+		background-size:auto 100%;
+		height:300px;
+	}
+	.tabla-aguacate{
+		background-image:url("img/precios tomate.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-aguacate-2{
+		background-image:url("img/aguacate web.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-cebolla{
+		background-image:url("img/cebolla web corregida.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-limon{
+		background-image:url("img/limon web corregido.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-jalapeño{
+		background-image:url("img/jalapeño web corregido.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-tomatillo{
+		background-image:url("img/tomatillo web corregido.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-platano{
+		background-image:url("img/platano web corregido.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-pepino{
+		background-image:url("img/pepino web corregido.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-ajo{
+		background-image:url("img/ajo web corregido.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-mango{
+		background-image:url("img/mango wen corregido.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.tabla-papaya{
+		background-image:url("img/papaya web corregido.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.img-tabulador-tomate{
+		background-image:url("img/Tabulador tomate ipad 2.png");
+		height:601px;
+	}
+	.---{
+	}
+	.p-bloc-12-margin-bottom{
+		margin-bottom:0px;
+	}
+	.txt-header-precios{
+		width:70%;
+	}
+	.img-tabulador-pimiento{
+		background-image:url("img/Tabulador fresa ipad.png");
+		height:601px;
+	}
+	.img-tabulador-aguacate{
+		background-image:url("img/Tabulador aguacate ipad.png");
+		height:601px;
+	}
+	.img-tabulador-cebolla{
+		background-image:url("img/Tabulador cebolla ipad_2.png");
+		height:601px;
+	}
+	.img-tabulador-jalapeño{
+		background-image:url("img/Tabulador jalapeño ipad.png");
+		height:601px;
+	}
+	.img-tabulador-tomatillo{
+		background-image:url("img/Tabulador tomatillo ipad_2.png");
+		height:601px;
+	}
+	.img-tabulador-platano{
+		background-image:url("img/Tabulador platano ipad.png");
+		height:601px;
+	}
+	.img-tabulador-pepino{
+		background-image:url("img/Tabulador pepino ipad.png");
+		height:601px;
+	}
+	.img-tabulador-ajo{
+		background-image:url("img/Tabulador ajo ipad.png");
+		height:601px;
+	}
+	.img-tabulador-berenjena{
+		background-image:url("img/Tabulador Berenjena ipad.png");
+		height:601px;
+	}
+	.img-tabulador-miel{
+		background-image:url("img/Tabulador miel ipad_3.png");
+		height:601px;
+	}
+	.img-tabulador-mango{
+		background-image:url("img/Tabulador mango ipad.png");
+		height:601px;
+	}
+	.img-tabulador-papaya{
+		background-image:url("img/Tabulador papaya ipad.png");
+		height:601px;
+	}
+	.img-tabulador-limon{
+		background-image:url("img/Tabulador limon ipad.png");
+		height:601px;
+	}
+	.img-tabulador-cafe{
+		background-image:url("img/Tabulador cafe ipad.png");
+	}
+	.bloc-0-bloc-12-margin-top{
+		;
+	}
+	.bloc-bloc-35-margin-top{
+		margin-top:22px;
+	}
+	.btn-42-button-style{
+		margin-left:0px;
+		width:100%;
+	}
+	.img-bloc-32-margin-top{
+		background-size:auto auto;
+		width:400px;
+	}
+	.img-63-margin-top{
+		margin-left:-1px;
+	}
+	.titulo-banner{
+		text-align:center;
+	}
+	.sub-banner{
+		text-align:center;
+	}
+	.logo-banner{
+		background-repeat:no-repeat;
+		background-position:center center;
+		margin-left:190px;
+	}
+	.container-div-bloc-32-style{
+		background-position:center center;
+	}
+	.btn-43-style{
+		width:100%;
+	}
+	.padding-colum{
+		padding:30px 30px 30px 30px;
+	}
+	.img-66-style{
+		margin-top:0px;
+	}
+	.btn-more-info-margin-top{
+		width:100%;
+	}
+	.h1-44-margin-top{
+		margin-top:60px;
+	}
+	.btn-47-style{
+		width:100%;
+	}
+	.p-286-style{
+		width:100%;
+	}
+	.p-286-style:active{
+		text-align:center;
+	}
+	.p-285-style{
+		font-family:Montserrat;
+		font-weight:400;
+		width:100%;
+	}
+	.logo-div{
+		background-position:center center;
+	}
+	.btn-tomate{
+		font-size:14px;
+		width:250px;
+	}
+	.h3-bloc-119-style{
+		margin-left:82px;
+	}
+	.img-170-style{
+		width:400px;
+	}
+	.btn-bloc-128-margin-top{
+		width:100%;
+	}
+	.container-div-bloc-128-margin-top{
+		margin-top:0px;
+	}
+	.p-bloc-128-margin-top{
+		text-align:center;
+	}
+	.p-bloc-128-style{
+		text-align:center;
+	}
+	.p-296-style{
+		text-align:center;
+	}
+	.h2-bloc-126-margin-top{
+		margin-top:30px;
+	}
+	.h3-bloc-127-margin-top{
+		margin-top:30px;
+	}
+	.row-bloc-90-style{
+		width:100%;
+	}
+	.h3-bloc-90-style{
+		width:100%;
+	}
+	.img-papaya--style{
+		width:220px;
+		margin-top:0px;
+	}
+	.img-papaya--style:hover{
+		width:300px;
+	}
+	.h1-style:hover{
+		text-align:center;
+	}
+	.h1-style{
+		text-align:center;
+		font-size:40px;
+	}
+	.p-bloc-90-style{
+		text-align:center;
+	}
+	.btn-bloc-90-margin-top{
+		width:100%;
+	}
+	.img-65-margin-top{
+		width:266px;
+		margin-top:0px;
+	}
+	.bloc-bloc-83-margin-top{
+		margin-top:30px;
+	}
+	.p-155-style{
+		margin-left:100px;
+	}
+	.p-153-style{
+		margin-left:94px;
+	}
+	.bloc-19737-margin-top{
+		margin-top:0px;
+	}
+	.img-80-margin-top{
+		margin-top:0px;
+	}
+	.p-146-margin-top:hover{
+		;
+	}
+	.p-146-margin-top{
+		width:100%;
+		margin-left:0px;
+	}
+	.p-140-style{
+		margin-left:119px;
+	}
+	.p-142-style{
+		margin-left:108px;
+	}
+	.tabla-tomate-copy-1{
+		background-image:url("img/precios tomate.png");
+		background-size:100% auto;
+		height:300px;
+	}
+	.btn-platano{
+		font-size:14px;
+		width:250px;
+	}
+	.img-76-margin-top{
+		margin-top:0px;
+	}
+	.p-101-style{
+		margin-top:0px;
+	}
+	.h1-53-margin-top{
+		margin-top:1px;
+	}
+	.img-72-margin-top{
+		margin-top:0px;
+	}
+	.p-75-style{
+		margin-left:108px;
+	}
+	.p-77-style{
+		margin-left:120px;
+	}
+	.img-67-margin-top{
+		margin-top:0px;
+	}
+	.p-95-style{
+		margin-left:96px;
+	}
+	.p-97-style{
+		margin-left:107px;
+	}
+	.img-34706-margin-top{
+		margin-top:66px;
+	}
+	.p-94-margin-top{
+		margin-top:50px;
+	}
+	.p-62-style{
+		margin-left:113px;
+	}
+	.p-64-style{
+		margin-left:106px;
+	}
+	.divider-23247-margin-top{
+		margin-bottom:0px;
+	}
+	.p-23-style{
+		margin-left:106px;
+	}
+	.p-25-style{
+		margin-left:103px;
+	}
+	.img-tomate-head-style{
+		width:213px;
+	}
+	.img-bloc-15-style{
+		width:319px;
+		margin-top:0px;
+	}
+	.img-253-style{
+		width:358px;
+	}
+	.p-42-margin-top{
+		margin-top:30px;
+	}
+	.p-43-style{
+		margin-left:102px;
+	}
+	.p-45-style{
+		margin-left:105px;
+	}
+	.img-31661-style{
+		margin-top:0px;
+	}
+	.img-tabulador-miel-abeja-apis{
+		height:601px;
+		background-image:url("img/Tabulador miel ipad.png");
+	}
+	.img-bloc-40-style{
+		width:266px;
+	}
+	.numero-compradores-y-vendedores{
+		text-align:center;
+	}
+	.p-244-style{
+		margin-left:113px;
+	}
+	.btn-145-style{
+		width:69.92%;
+	}
+	.bloc-17506-margin-top{
+		margin-top:0px;
+	}
+	.bloc-3400-margin-top{
+		margin-top:30px;
+	}
+	.card-81-margin-top{
+		margin-top:1px;
+	}
+	.bloc-42902-margin-top{
+		margin-top:30px;
+	}
+	.btn-42-style{
+		width:100%;
+	}
+	.img-45-style{
+		margin-top:30px;
+		width:531px;
+	}
+	.img-57-style{
+		margin-top:57px;
+	}
+	.bloc-26471-margin-top{
+		margin-top:20px;
+	}
+	.hover-card-semsagro{
+	}
+	.card-bloc-38-margin-top{
+		margin-top:20px;
+	}
+	.card-body-28-style{
+		width:100%;
+	}
+	.btn-247-style{
+		width:100%;
+	}
+	.txt-categoria{
+		text-align:center;
+	}
+	.label-label-style{
+		width:100%;
+	}
+	.bloc-cards-blog-margin-top{
+		margin-top:15px;
+	}
+	.p-cards-blog-margin-bottom{
+		margin-left:-5px;
+	}
+	.container-div-margin-left{
+		margin-left:-19px;
+	}
+	.btn-248-style{
+		width:44.7%;
+	}
+	.p-cards-blog-margin-top{
+		margin-bottom:0px;
+	}
+	.btn-bloc-0-margin-top{
+		width:100%;
+	}
+	.h1-margin-bottom{
+		margin-top:0px;
+	}
+	.btn-style{
+		width:89%;
+		margin-top:25px;
+	}
+	.txtcuerpo-copy-1{
+		padding-right:30px;
+		padding-bottom:30px;
+		padding-left:0px;
+	}
+	.h1-bloc-4-margin-top:hover{
+		text-align:center;
+	}
+	.txt-banner-withe:hover{
+		text-align:center;
+	}
+	.txt-banner-withe{
+		text-align:center;
+	}
+	.cuerpo-blanco{
+		text-align:center;
+	}
+	.cuerpo-blanco:hover{
+	}
+	.btn-bloc-6-margin-top{
+		width:63.65%;
+	}
+	.btn-bloc-52-style{
+		width:56.41%;
+	}
+	.btn-bloc-78-margin-top{
+		width:65.18%;
+	}
+	.btn-bloc-10-style{
+		padding-top:104px;
+		padding-bottom:104px;
+	}
+	
+}
+
+@media (max-width: 767px){
+	.row-margin-left{
+		margin-left:0px;
+	}
+	.card-bloc-4-margin-top{
+		margin-top:10px;
+	}
+	.logo-sm{
+		width:280px;
+		margin-top:35px;
+	}
+	.btn-azul{
+		width:500px;
+		font-size:14px;
+	}
+	.boton-productos{
+		margin-left:-120px;
+	}
+	.img-alianzas-margin-top{
+		margin-left:223px;
+	}
+	.divider-margin-top{
+		width:75.19%;
+	}
+	.bloc-bloc-2-blog-margin-top{
+		margin-top:20px;
+	}
+	.card-blog-md{
+		margin-left:0px;
+	}
+	.h3-bloc-4-style{
+		margin-left:57px;
+	}
+	.btn-5-style{
+		width:66.23%;
+	}
+	.txt-titulo-web{
+		font-size:50px;
+	}
+	.h4-style{
+		font-size:20px;
+	}
+	.h1-5-margin-top{
+		margin-top:90px;
+	}
+	.img-comprar-vender-style{
+		margin-top:163px;
+		margin-left:-2px;
+	}
+	.divider-0-margin-top{
+		margin-bottom:1px;
+	}
+	.btn-22251-style{
+		width:93.42%;
+	}
+	.row-12-margin-top{
+		margin-top:0px;
+	}
+	.btn-button-style{
+		margin-left:5px;
+		width:100%;
+	}
+	.subasta{
+		padding-left:30px;
+		padding-right:30px;
+		padding-bottom:30px;
+	}
+	.encuentra-oportunidades{
+		padding-right:30px;
+	}
+	.consulta-precios{
+		padding-left:30px;
+		padding-bottom:0px;
+	}
+	.mensajes-privados{
+		padding-right:30px;
+	}
+	.seguridad-smattcom{
+		padding-left:30px;
+	}
+	.img-6-style{
+		margin-top:132px;
+	}
+	.img-oportunidades{
+		width:275px;
+		height:301px;
+	}
+	.p-bloc-5-margin-top{
+		margin-top:1px;
+		margin-left:22px;
+	}
+	.txt-sub-web{
+		font-size:18px;
+	}
+	.h3-margin-left{
+		margin-left:106px;
+		width:57.26%;
+	}
+	.img-49-style{
+		width:300px;
+	}
+	.img-tomates{
+		width:300px;
+	}
+	.h3-style{
+		width:100%;
+		margin-left:0px;
+	}
+	.h1-bloc-11-margin-top{
+		margin-top:50px;
+	}
+	.btn-bloc-53-style{
+		width:100%;
+	}
+	.card-body-bloc-54-style{
+		width:98.38%;
+		margin-left:1px;
+	}
+	.row-style{
+		width:100%;
+		margin-left:12px;
+	}
+	.card-style{
+		width:342px;
+		height:463px;
+		margin-left:94px;
+	}
+	.btn-83-style{
+		width:99.78%;
+	}
+	.bloc-margin-top{
+		margin-top:20px;
+	}
+	.bloc-bloc-54-margin-top{
+		margin-top:20px;
+	}
+	.card-body-17-margin-top{
+		margin-top:9px;
+	}
+	.card-18-margin-top{
+		margin-top:30px;
+	}
+	.card-17-margin-top{
+		margin-top:31px;
+	}
+	.img-canacint-margin-left{
+		margin-left:163px;
+	}
+	.h3-margin-bottom{
+		margin-left:201px;
+	}
+	.p-115-margin-top{
+		margin-left:172px;
+	}
+	.h1-canacintra-margin-top{
+		margin-top:50px;
+	}
+	.btn-91-style{
+		margin-left:0px;
+		width:63.5%;
+	}
+	.btn-bloc-77-style{
+		margin-left:68px;
+		width:68.54%;
+	}
+	.btn-enviar-margin-top{
+		margin-left:-21px;
+	}
+	.h1-bloc-77-margin-top{
+		margin-top:21px;
+	}
+	.container-div-bloc-84-style{
+		width:96.07%;
+	}
+	.h3-73-style{
+		margin-left:72px;
+	}
+	.img-bloc-83-style{
+		margin-left:97px;
+	}
+	.img-logo-blog-margin-left{
+		margin-left:66px;
+	}
+	.p-style{
+		margin-left:62px;
+	}
+	.btn-button-margin-top{
+		margin-left:13px;
+	}
+	.logo-blog{
+		width:400px;
+	}
+	.btn-siguiente-style{
+		margin-top:10px;
+	}
+	.h1-margin-top{
+		width:92.06%;
+	}
+	.h3-bloc-0-margin-bottom{
+		width:98.57%;
+	}
+	.img-1-style{
+		margin-top:43px;
+	}
+	.p-bloc-87-style{
+		margin-left:0px;
+		width:100%;
+	}
+	.img-bloc-0-margin-top{
+		margin-top:48px;
+	}
+	.img-logo-smattcom-style{
+		margin-left:119px;
+		margin-top:60px;
+	}
+	.bloc-0-bloc-84-margin-top{
+		margin-top:0px;
+	}
+	.h1-noticias-margin-bottom{
+		margin-top:30px;
+	}
+	.h3-margin-top{
+		margin-left:0px;
+	}
+	.icon-bloc-84-margin-left{
+		margin-left:160px;
+	}
+	.container-div-0-bloc-84-margin-top{
+		margin-top:20px;
+	}
+	.h1-83-margin-top{
+		margin-top:60px;
+	}
+	.h1-136-style{
+		width:82.32%;
+	}
+	.p-194-style{
+		width:82.89%;
+	}
+	.h1-bloc-112-margin-top{
+		width:100%;
+	}
+	.p-bloc-112-style{
+		width:100%;
+	}
+	.btn-147-style{
+		width:100%;
+		margin-top:1px;
+	}
+	.tabla-tomate{
+		background-image:url("img/tomate movil.png");
+		background-size:100% auto;
+	}
+	.p-17-margin-top{
+		width:100%;
+	}
+	.tabla-pimiento{
+		background-image:url("img/tomate movil.png");
+		background-size:100% auto;
+	}
+	.img-logo-smattcom-margin-top{
+		margin-left:110px;
+	}
+	.img-bloc-116-margin-top{
+		margin-top:70px;
+	}
+	.img-bloc-122-margin-top{
+		margin-top:40px;
+	}
+	.tabla-pimiento-2{
+		background-image:url("img/pimiento movil 2.png");
+		background-size:auto 100%;
+	}
+	.tabla-aguacate{
+		background-image:url("img/tomate movil.png");
+		background-size:100% auto;
+	}
+	.tabla-aguacate-2{
+		background-image:url("img/aguacate movil.png");
+		background-size:100% auto;
+	}
+	.tabla-cebolla{
+		background-image:url("img/cebolla movil corregida.png");
+		background-size:100% auto;
+	}
+	.tabla-limon{
+		background-image:url("img/limon movil corregido.png");
+		background-size:100% auto;
+	}
+	.tabla-jalapeño{
+		background-image:url("img/jalapeño movil corregido.png");
+		background-size:100% auto;
+	}
+	.tabla-tomatillo{
+		background-image:url("img/tomatillo movil corregido.png");
+		background-size:100% auto;
+	}
+	.tabla-platano{
+		background-image:url("img/platano movil corregido.png");
+		background-size:100% auto;
+	}
+	.tabla-pepino{
+		background-image:url("img/pepino movil corregido.png");
+		background-size:100% auto;
+	}
+	.tabla-ajo{
+		background-image:url("img/ajo movil corregido.png");
+		background-size:100% auto;
+	}
+	.tabla-mango{
+		background-image:url("img/mando movil corregido.png");
+		background-size:100% auto;
+	}
+	.tabla-papaya{
+		background-image:url("img/papaya movil corregido.png");
+		background-size:100% auto;
+	}
+	.img-tabulador-tomate{
+		background-image:url("img/Tabulador tomate saladette movil_3.png");
+		height:1709px;
+	}
+	.bloc-14613-margin-top{
+		margin-top:10px;
+	}
+	.bloc-5086-margin-top{
+		margin-top:10px;
+	}
+	.txt-header-precios{
+		width:80%;
+	}
+	.img-tabulador-pimiento{
+		background-image:url("img/Tabulador fresa movil.png");
+		height:1709px;
+	}
+	.img-tabulador-aguacate{
+		background-image:url("img/Tabulador aguacate movil.png");
+		height:1709px;
+	}
+	.img-tabulador-cebolla{
+		background-image:url("img/Tabulador cebolla movil_2.png");
+		height:1709px;
+	}
+	.img-tabulador-jalapeño{
+		background-image:url("img/Tabulador jalapeño movil.png");
+		height:1709px;
+	}
+	.img-tabulador-tomatillo{
+		background-image:url("img/Tabulador tomatillo movil_2.png");
+		height:1709px;
+	}
+	.img-tabulador-platano{
+		background-image:url("img/Tabulador platano movil.png");
+		height:1709px;
+	}
+	.img-tabulador-pepino{
+		background-image:url("img/Tabulador pepino movil.png");
+		height:1709px;
+	}
+	.img-tabulador-ajo{
+		background-image:url("img/Tabulador ajo movil.png");
+		height:1709px;
+	}
+	.img-tabulador-berenjena{
+		background-image:url("img/Tabulador Berenjenamovil.png");
+		height:1709px;
+	}
+	.img-tabulador-miel{
+		background-image:url("img/Tabulador mielmovil_3.png");
+		height:1709px;
+	}
+	.img-tabulador-mango{
+		background-image:url("img/Tabulador mango movil.png");
+		height:1709px;
+	}
+	.img-tabulador-papaya{
+		background-image:url("img/Tabulador papaya movil.png");
+		height:1709px;
+	}
+	.img-tabulador-limon{
+		height:1709px;
+		background-image:url("img/Tabulador limon movil.png");
+	}
+	.img-tabulador-cafe{
+		background-image:url("img/Tabulador tomate saladette movil_3.png");
+		height:363px;
+	}
+	.bloc-0-bloc-12-margin-top{
+		;
+	}
+	.img-63-margin-top{
+		margin-left:0px;
+	}
+	.btn-42-button-style{
+		width:100%;
+		margin-left:0px;
+	}
+	.p-69-style{
+		opacity:1.0;
+		text-align:center;
+	}
+	.padding-colum{
+		padding:30px 30px 30px 30px;
+	}
+	.titulo-banner{
+		text-align:center;
+	}
+	.sub-banner{
+		text-align:center;
+	}
+	.logo-banner{
+		margin-left:100px;
+	}
+	.img-66-style{
+		width:452px;
+		margin-top:0px;
+	}
+	.h2-bloc-36-margin-top{
+		margin-top:30px;
+	}
+	.btn-more-info-margin-top{
+		width:98.1%;
+	}
+	.btn-47-style{
+		width:100%;
+	}
+	.btn-tomate{
+		width:500px;
+	}
+	.h3-bloc-119-style{
+		margin-left:57px;
+		margin-top:0px;
+	}
+	.row-bloc-90-style{
+		width:93.73%;
+	}
+	.h1-bloc-125-margin-top{
+		margin-top:0px;
+	}
+	.p-153-style{
+		margin-left:69px;
+	}
+	.p-155-style{
+		margin-left:68px;
+	}
+	.p-140-style{
+		margin-left:86px;
+	}
+	.p-142-style{
+		margin-left:86px;
+	}
+	.tabla-tomate-copy-1{
+		background-image:url("img/tomate movil.png");
+		background-size:100% auto;
+	}
+	.btn-platano{
+		width:500px;
+	}
+	.img-bloc-52-margin-top{
+		margin-top:30px;
+	}
+	.p-75-style{
+		margin-left:82px;
+	}
+	.p-77-style{
+		margin-left:85px;
+	}
+	.p-95-style{
+		margin-left:71px;
+	}
+	.p-97-style{
+		margin-left:84px;
+	}
+	.img-65-margin-top{
+		width:207px;
+		margin-top:0px;
+	}
+	.img-papaya--style{
+		width:183px;
+	}
+	.p-62-style{
+		margin-left:77px;
+	}
+	.p-64-style{
+		margin-left:72px;
+	}
+	.img-telefonos-head-style{
+		margin-top:50px;
+	}
+	.img-tomate-head-style{
+		width:194px;
+	}
+	.img-bloc-15-style{
+		width:274px;
+	}
+	.img-253-style{
+		width:250px;
+	}
+	.img-31661-style{
+		width:288px;
+	}
+	.p-43-style{
+		margin-left:72px;
+	}
+	.img-grafica-fressa-style{
+		width:526px;
+	}
+	.p-47-margin-bottom{
+		margin-bottom:0px;
+	}
+	.img-tabulador-miel-abeja-apis{
+		height:1709px;
+		background-image:url("img/Tabulador miel movil.png");
+	}
+	.numero-compradores-y-vendedores{
+		text-align:center;
+	}
+	.p-244-style{
+		margin-left:68px;
+	}
+	.card-body-55-style{
+		width:100%;
+	}
+	.img-45-style{
+		width:396px;
+		margin-top:50px;
+	}
+	.pading-c1{
+	}
+	.img-57-style{
+		margin-top:16px;
+	}
+	.h1-21-style{
+		text-align:center;
+	}
+	.card-body-bloc-38-margin-bottom{
+		height:240px;
+	}
+	.card-body-25-style{
+		height:240px;
+	}
+	.h3-29-margin-top{
+		margin-top:3px;
+		text-align:center;
+	}
+	.btn-42-style{
+		width:95.71%;
+	}
+	.img-bilboard-2-margin-top{
+		width:316px;
+	}
+	.h1-157-style{
+		margin-top:30px;
+	}
+	.h4-bloc-265-margin-top{
+		margin-top:20px;
+	}
+	.bloc-40834-margin-top{
+		margin-top:20px;
+	}
+	.bloc-8028-margin-top{
+		margin-top:20px;
+	}
+	.bloc-productos-1-margin-top{
+		margin-top:25px;
+	}
+	.bloc-48110-margin-top{
+		margin-top:25px;
+	}
+	.bloc-13136-margin-top{
+		margin-top:25px;
+	}
+	.bloc-25262-margin-top{
+		margin-top:25px;
+	}
+	.bloc-18819-margin-top{
+		margin-top:26px;
+	}
+	.bloc-24488-margin-top{
+		margin-top:25px;
+	}
+	.bloc-23366-margin-top{
+		margin-top:26px;
+	}
+	.bloc-38031-margin-top{
+		margin-top:25px;
+	}
+	.bloc-bloc-180-margin-top{
+		margin-top:15px;
+	}
+	.bloc-17506-margin-top{
+		margin-top:15px;
+	}
+	.bloc-0-bloc-180-margin-top{
+		margin-top:15px;
+	}
+	.bloc-42902-margin-top{
+		margin-top:15px;
+	}
+	.p-cards-blog-margin-bottom{
+		margin-left:-37px;
+	}
+	.img-margin-right{
+		margin-left:0px;
+		margin-right:19px;
+	}
+	.container-div-margin-left{
+		margin-left:-31px;
+	}
+	.btn-247-style{
+		width:100%;
+	}
+	.btn-248-style{
+		width:100%;
+	}
+	.bloc-cards-blog-margin-top{
+		margin-top:26px;
+	}
+	.btn-261-style{
+		width:95.44%;
+	}
+	.btn-bloc-10-style{
+		padding-top:70px;
+		padding-bottom:70px;
+	}
+	.p-15-margin-bottom{
+		margin-top:50px;
+	}
+	.sidebar-nav{
+		width:230px!important;
+	}
+	.nav-special.sidebar-nav .nav > li{
+		width:80%;
+	}
+	.nav-invert .sidebar-nav .close-special-menu{
+		left:200px;
+	}
+	
+}
+
+@media (max-width: 575px){
+	.footer-link{
+		text-align:center;
+	}
+	.logo-sm{
+		width:200px;
+	}
+	.txt-titulo-web{
+		font-size:40px;
+		font-family:"Montserrat";
+		font-weight:700;
+	}
+	.btn-azul{
+		width:270px;
+	}
+	.img-como-funciona-style{
+		width:2300px;
+	}
+	.btnxs{
+		margin-left:5px;
+	}
+	.img-alianzas-margin-top{
+		margin-left:101px;
+	}
+	.divider-margin-top{
+		margin-left:39px;
+	}
+	.img-logo-gris-margin-left{
+		margin-left:69px;
+	}
+	.h4-margin-top{
+		margin-top:30px;
+	}
+	.bloc-footer-margin-top{
+		margin-top:30px;
+	}
+	.h3-27-visitas-style{
+		margin-left:14px;
+	}
+	.txtfooter{
+		text-align:center;
+	}
+	.bloc-0-margin-top{
+		margin-top:0px;
+	}
+	.h3-bloc-4-style{
+		font-size:9px;
+		margin-left:7px;
+	}
+	.img-header-home{
+		background-size:auto 700px;
+	}
+	.h1-margin-top{
+		margin-top:40px;
+		width:79.57%;
+		margin-left:8px;
+	}
+	.h4-style{
+		margin-top:30px;
+		font-size:20px;
+	}
+	.img-margin-bottom{
+		width:190px;
+		margin-top:0px;
+		margin-left:41px;
+	}
+	.logo-navbar{
+		background-size:90px auto;
+	}
+	.btn-5-style{
+		width:92.86%;
+	}
+	.h1-3-margin-top{
+		margin-top:100px;
+	}
+	.p-2-bloc-2-margin-top{
+		margin-bottom:0px;
+	}
+	.img-comprar-vender-style{
+		margin-top:30px;
+	}
+	.img-6-style{
+		width:262px;
+		margin-top:0px;
+	}
+	.h1-5-margin-top{
+		margin-top:40px;
+		margin-left:2px;
+		width:100%;
+	}
+	.bloc-29755-margin-top{
+		margin-top:30px;
+	}
+	.bloc-15968-margin-top{
+		margin-top:30px;
+	}
+	.divider-margin-bottom{
+		margin-bottom:-7px;
+	}
+	.txttitulos{
+		font-size:25px;
+		text-align:center;
+	}
+	.h1-12876-margin-top{
+		font-size:25px;
+	}
+	.encuentra-oportunidades{
+		;
+	}
+	.p-5-margin-top{
+		width:100%;
+		margin-left:6px;
+	}
+	.btn-22251-style{
+		margin-top:19px;
+		width:100%;
+	}
+	.img-segurid-style{
+		width:255px;
+	}
+	.p-4-margin-top{
+		width:100%;
+		margin-left:1px;
+	}
+	.p-2-margin-bottom{
+		margin-left:0px;
+	}
+	.p-3-margin-top{
+		width:100%;
+		margin-left:-1px;
+	}
+	.img-4-margin-left{
+		margin-left:4px;
+	}
+	.img-7-margin-left{
+		margin-left:3px;
+	}
+	.img-8-margin-left{
+		margin-left:4px;
+	}
+	.txtcuerpo{
+		padding-right:0px;
+		padding-bottom:0px;
+		margin-top:30px;
+		margin-left:0px;
+	}
+	.btn-8-style{
+		;
+	}
+	.p-bloc-2-margin-top{
+	}
+	.txt-sub-web{
+		font-size:18px;
+	}
+	.h1-bloc-11-margin-top{
+		margin-top:0px;
+	}
+	.h3-margin-left{
+		margin-left:60px;
+	}
+	.h3-style{
+		margin-left:0px;
+		width:100%;
+	}
+	.btn-26-style{
+		width:100%;
+	}
+	.card-body-bloc-54-style{
+		width:100%;
+	}
+	.btn-83-style{
+		width:100%;
+	}
+	.card-style{
+		margin-left:3px;
+		width:100%;
+	}
+	.row-bloc-54-style{
+		margin-left:2px;
+	}
+	.row-style{
+		width:100%;
+	}
+	.h1-83-margin-top{
+		margin-top:31px;
+	}
+	.img-platan-margin-left{
+		margin-left:37px;
+	}
+	.h3- twitter--margin-bottom{
+		margin-left:1px;
+		width:100%;
+	}
+	.p-123-margin-top{
+		margin-left:95px;
+	}
+	.icon-bloc-63-margin-left{
+		margin-left:94px;
+	}
+	.img-canacint-margin-left{
+		margin-left:35px;
+	}
+	.h3-margin-bottom{
+		margin-left:83px;
+		width:50.37%;
+	}
+	.link-margin-left{
+		margin-left:0px;
+	}
+	.p-115-margin-top{
+		margin-left:18px;
+		width:72.59%;
+	}
+	.btn-91-style{
+		width:78.15%;
+		margin-left:14px;
+		margin-right:0px;
+	}
+	.paddin-formulario{
+		padding:30px 30px 30px 30px;
+	}
+	.btn-enviar-margin-top{
+		width:100%;
+		margin-left:4px;
+	}
+	.txt-subtitulo-web{
+		font-size:18px;
+	}
+	.btn-bloc-77-style{
+		margin-left:0px;
+		width:95.47%;
+	}
+	.celulares-md{
+		width:100%;
+	}
+	.h1-bloc-77-margin-top{
+		margin-top:30px;
+		width:91.36%;
+	}
+	.h3-73-style{
+		width:100%;
+		margin-left:3px;
+	}
+	.p-160-margin-top{
+		width:100%;
+	}
+	.img-bloc-83-style{
+		margin-left:39px;
+	}
+	.btn-siguiente-style{
+		width:100%;
+		margin-top:15px;
+	}
+	.p-style{
+		width:100%;
+		margin-left:4px;
+	}
+	.img-logo-blog-margin-left{
+		margin-left:3px;
+	}
+	.btn-button-margin-top{
+		margin-left:0px;
+		margin-right:8px;
+		width:100%;
+	}
+	.logo-gris-blog{
+		width:200px;
+	}
+	.img-header-blog{
+		;
+	}
+	.margen-xs{
+		;
+	}
+	.img-1-style{
+		width:150px;
+		margin-top:10px;
+	}
+	.h3-bloc-0-margin-bottom{
+		margin-bottom:5px;
+		margin-left:7px;
+		width:78.72%;
+	}
+	.img-header-descarga{
+		background-image:url("img/xs descarga.png");
+	}
+	.p-1-margin-top{
+		margin-top:30px;
+	}
+	.header-como-funciona{
+		background-image:url("img/xs como funciona.png");
+	}
+	.row-bloc-87-style{
+		width:100%;
+	}
+	.h3--31-05-2019-style{
+		width:100%;
+		margin-top:0px;
+		margin-left:59px;
+	}
+	.img-bloc-87-margin-left{
+		margin-left:109px;
+	}
+	.img-bloc-2-blog-margin-top{
+		margin-left:98px;
+	}
+	.p-bloc-87-style{
+		margin-bottom:6px;
+	}
+	.btn-118-margin-top{
+		width:100%;
+		margin-left:0px;
+	}
+	.header-alianzas{
+		background-image:url("img/xs alianzas.png");
+	}
+	.header-contacto{
+		background-image:url("img/xs contacto.png");
+	}
+	.html-widget-margin-left{
+		margin-top:30px;
+		width:100%;
+	}
+	.img-logo-smattcom-style{
+		margin-top:0px;
+		width:100px;
+	}
+	.header-como-funciona-2{
+		;
+	}
+	.img-xs{
+		background-image:url("img/xs descarga.png");
+	}
+	.field-style{
+		width:100%;
+	}
+	.img-logo-gris-margin-left:active{
+		background-position:left top;
+	}
+	.img-209-margin-left{
+		margin-left:73px;
+	}
+	.img-icono-gracias-style{
+		width:100px;
+	}
+	.h6-margin-top{
+		margin-left:0px;
+		margin-top:35px;
+	}
+	.img-icono-smattcom-style{
+		width:50px;
+	}
+	.autor-nota{
+		font-size:12px;
+	}
+	.h3-margin-top{
+		width:100%;
+		margin-bottom:0px;
+		margin-left:0px;
+	}
+	.card-body-margin-left{
+		margin-left:0px;
+	}
+	.container-div-0-bloc-84-margin-top{
+		margin-top:20px;
+	}
+	.container-div-bloc-84-margin-top{
+		margin-top:0px;
+	}
+	.p-bloc-84-margin-top{
+		margin-top:20px;
+	}
+	.p-159-margin-top{
+		margin-top:20px;
+	}
+	.img-blog-1-style{
+		width:228px;
+	}
+	.img-card-blog-xs{
+		width:350px;
+	}
+	.img-card{
+	}
+	.bloc-bloc-84-margin-top{
+		margin-top:20px;
+	}
+	.h1-136-style{
+		margin-top:19px;
+		font-size:20px;
+		width:100%;
+		text-align:center;
+	}
+	.h3-93-style{
+		font-size:16px;
+	}
+	.p-194-style{
+		width:100%;
+		text-align:center;
+		font-size:16px;
+	}
+	.fondo-exportacion{
+		background-image:url("img/movil exportacion5.png");
+		background-repeat:no-repeat;
+		background-position:center top;
+		background-size:auto auto;
+		height:889px;
+	}
+	.h1-bloc-112-margin-top{
+		margin-top:50px;
+		font-size:30px;
+		text-align:center;
+		margin-left:0px;
+		padding-right:5%;
+		padding-left:5%;
+		width:100%;
+	}
+	.p-bloc-112-style{
+		font-size:16px;
+		text-align:center;
+		margin-left:0px;
+		width:100%;
+		padding-right:10%;
+		padding-bottom:10%;
+		padding-left:10%;
+	}
+	.h1-blog-smattcom-margin-top{
+		float:none;
+		background-position:left top;
+	}
+	.img-191-style{
+		;
+	}
+	.bloc-bloc-112-margin-top{
+		margin-top:0px;
+	}
+	.img-logo-smattcom-margin-top{
+		margin-top:0px;
+		width:200px;
+		margin-left:30px;
+	}
+	.btn-147-style{
+		width:100%;
+		margin-top:20px;
+	}
+	.btn-40693-style{
+		width:94.07%;
+	}
+	.tabla-tomate{
+		background-image:url("img/tomate movil.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-pimiento{
+		background-image:url("img/tomate movil.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.img-avion-2-style{
+		width:270px;
+	}
+	.h2-margin-bottom{
+		margin-top:35px;
+	}
+	.img-193-margin-left{
+		margin-left:91px;
+	}
+	.h1-137-margin-bottom{
+		margin-top:0px;
+	}
+	.h1-138-margin-bottom{
+		margin-top:0px;
+	}
+	.h1-bloc-116-style{
+		text-align:center;
+	}
+	.img-bloc-116-margin-top{
+		margin-top:40px;
+	}
+	.h1-bloc-116-margin-top{
+		margin-top:60px;
+	}
+	.img-bloc-122-margin-top{
+		margin-top:40px;
+	}
+	.bloc-bloc-116-margin-top{
+		margin-top:20px;
+	}
+	.tabla-pimiento-2{
+		background-image:url("img/pimiento movil 2.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-aguacate{
+		background-image:url("img/tomate movil.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-aguacate-2{
+		background-image:url("img/aguacate movil.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-cebolla{
+		background-image:url("img/cebolla movil corregida.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-limon{
+		background-image:url("img/limon movil corregido.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-jalapeño{
+		background-image:url("img/jalapeño movil corregido.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-tomatillo{
+		background-image:url("img/tomatillo movil corregido.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-platano{
+		background-image:url("img/platano movil corregido.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-pepino{
+		background-image:url("img/pepino movil corregido.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-ajo{
+		background-image:url("img/ajo movil corregido.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-mango{
+		background-image:url("img/mando movil corregido.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.tabla-papaya{
+		background-image:url("img/papaya movil corregido.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.img-aguacate-2-margin-top{
+		width:300px;
+	}
+	.label-style{
+		width:73.75%;
+	}
+	.img-tabulador-tomate{
+		background-image:url("img/Tabulador tomate saladette movil_3.png");
+	}
+	.bloc-14613-margin-top{
+		margin-top:10px;
+	}
+	.bloc-5086-margin-top{
+		margin-top:10px;
+	}
+	.img-tabulador-pimiento{
+		background-image:url("img/Tabulador fresa movil.png");
+	}
+	.img-tabulador-aguacate{
+		background-image:url("img/Tabulador aguacate movil.png");
+	}
+	.img-tabulador-cebolla{
+		background-image:url("img/Tabulador cebolla movil_2.png");
+	}
+	.img-tabulador-jalapeño{
+		background-image:url("img/Tabulador jalapeño movil.png");
+	}
+	.img-tabulador-tomatillo{
+		background-image:url("img/Tabulador tomatillo movil_2.png");
+	}
+	.img-tabulador-platano{
+		background-image:url("img/Tabulador platano movil.png");
+	}
+	.img-tabulador-pepino{
+		background-image:url("img/Tabulador pepino movil.png");
+	}
+	.img-tabulador-ajo{
+		background-image:url("img/Tabulador ajo movil.png");
+	}
+	.img-tabulador-berenjena{
+		background-image:url("img/Tabulador Berenjenamovil.png");
+	}
+	.img-tabulador-miel{
+		background-image:url("img/Tabulador mielmovil_3.png");
+	}
+	.img-tabulador-mango{
+		background-image:url("img/Tabulador mango movil.png");
+	}
+	.img-tabulador-papaya{
+		background-image:url("img/Tabulador papaya movil.png");
+	}
+	.img-tabulador-limon{
+		background-image:url("img/Tabulador limon movil.png");
+	}
+	.img-tabulador-cafe{
+		background-image:url("img/Tabulador cafe movil.png");
+	}
+	.txt-sub-header{
+		width:90%;
+	}
+	.img-63-margin-top{
+		margin-left:0px;
+		width:200px;
+	}
+	.h1-39-margin-top{
+		width:100%;
+	}
+	.padding-colum{
+		padding:30px 30px 30px 30px;
+	}
+	.p-69-style{
+		width:100%;
+		text-align:center;
+		opacity:0.8;
+		color:#FEFFFE!important;
+		font-size:18px;
+	}
+	.btn-42-button-style{
+		margin-left:0px;
+		width:100%;
+	}
+	.logo-banner{
+		margin-left:20px;
+	}
+	.titulo-banner{
+		font-size:30px;
+	}
+	.img-66-style{
+		margin-top:0px;
+	}
+	.btn-47-style{
+		width:100%;
+	}
+	.logo-div{
+		background-size:240px auto;
+	}
+	.p-285-style{
+		margin-top:0px;
+	}
+	.btn-tomate{
+		width:270px;
+	}
+	.h3-bloc-119-style{
+		margin-left:0px;
+	}
+	.p-bloc-128-style{
+		font-size:20px;
+	}
+	.container-div-bloc-122-style{
+		margin-top:0px;
+	}
+	.btn-bloc-4-style{
+		width:100%;
+	}
+	.btn-precio-style{
+		width:100%;
+	}
+	.vendedores:hover{
+		font-size:14px;
+	}
+	.vendedores{
+		font-size:14px;
+	}
+	.h1-style{
+		font-size:30px;
+	}
+	.h1-style:hover{
+	}
+	.p-bloc-90-style{
+		font-size:16px;
+		margin-top:0px;
+	}
+	.img-papaya--style:hover{
+		width:250px;
+	}
+	.btn-bloc-90-margin-top{
+		width:100%;
+	}
+	.img-papaya--style{
+		width:154px;
+		margin-top:0px;
+	}
+	.bloc-bloc-119-margin-top{
+		margin-top:0px;
+	}
+	.img-82-margin-top{
+		width:270px;
+	}
+	.bloc-bloc-122-margin-top{
+		margin-top:0px;
+	}
+	.img-65-margin-top{
+		margin-bottom:0px;
+		width:117px;
+		margin-top:0px;
+	}
+	.img-img-papaya-1-j-margin-top{
+		margin-top:0px;
+	}
+	.p-bloc-83-style{
+		width:100%;
+	}
+	.p-155-style{
+		margin-left:-1px;
+	}
+	.p-153-style{
+		margin-left:-1px;
+	}
+	.p-140-style{
+		margin-left:0px;
+	}
+	.p-142-style{
+		margin-left:-1px;
+	}
+	.tabla-tomate-copy-1{
+		background-image:url("img/tomate movil.png");
+		background-position:center center;
+		background-size:auto 100%;
+	}
+	.btn-platano{
+		width:270px;
+	}
+	.p-100-margin-top{
+		margin-top:0px;
+	}
+	.p-74-margin-top{
+		margin-top:0px;
+	}
+	.p-75-style{
+		margin-left:-1px;
+	}
+	.p-77-style{
+		margin-left:0px;
+	}
+	.h1-8203-margin-top{
+		margin-top:0px;
+	}
+	.p-23-style{
+		margin-left:0px;
+	}
+	.p-25-style{
+		margin-left:2px;
+	}
+	.img-tomate-head-style{
+		width:155px;
+	}
+	.img-bloc-15-style{
+		width:226px;
+		margin-top:0px;
+	}
+	.img-253-style{
+		width:264px;
+	}
+	.img-31661-style{
+		width:209px;
+	}
+	.img-grafica-fressa-style{
+		width:270px;
+	}
+	.img-tabulador-miel-abeja-apis{
+		background-image:url("img/Tabulador miel movil.png");
+	}
+	.img-83-style{
+		width:205px;
+	}
+	.img-limon-head-style{
+		width:203px;
+	}
+	.img-bloc-40-style{
+		width:198px;
+	}
+	.img-113-style{
+		width:192px;
+	}
+	.img-123-style{
+		width:229px;
+	}
+	.img-bloc-132-style{
+		width:209px;
+	}
+	.p-bloc-137-margin-top{
+		margin-top:0px;
+	}
+	.p-margin-top{
+		margin-bottom:0px;
+	}
+	.bloc-19977-margin-bottom{
+		margin-bottom:30px;
+	}
+	.bloc-13306-margin-top{
+		margin-top:30px;
+	}
+	.btn-outline-semsagro{
+		width:100%;
+	}
+	.img-45-style{
+		width:100%;
+	}
+	.pading-c1{
+		padding-right:10%;
+		padding-left:10%;
+	}
+	.img-bloc-24-style{
+		width:248px;
+	}
+	.h1-bloc-24-style{
+		font-size:28px;
+		margin-top:30px;
+	}
+	.card-body-style{
+		margin-left:0px;
+		background-position:center center;
+		background-repeat:no-repeat;
+		background-size:auto auto;
+		margin-right:0px;
+		height:473px;
+		width:100%;
+	}
+	.img-57-style{
+		width:51px;
+	}
+	.p-44-margin-top{
+		margin-top:10px;
+	}
+	.h1-21-style{
+		font-size:28px;
+	}
+	.card-body-bloc-38-margin-bottom{
+		height:200px;
+	}
+	.card-body-bloc-38-style{
+		height:308px;
+	}
+	.card-body-25-style{
+		height:200px;
+	}
+	.bloc-40201-margin-top{
+		margin-top:20px;
+	}
+	.h1-21-margin-top{
+		margin-bottom:1px;
+	}
+	.h1-22-style{
+		font-size:30px;
+	}
+	.card-body-26-style{
+		height:801px;
+	}
+	.img-bloc-38-style{
+		margin-top:22px;
+		width:163px;
+	}
+	.card-body-27-style{
+		height:621px;
+	}
+	.titulos-semsagro{
+		font-size:28px;
+	}
+	.titulos-cards-generales{
+		font-size:25px;
+	}
+	.card-margin-top{
+		margin-top:20px;
+	}
+	.btn-bloc-25-style{
+		width:100%;
+	}
+	.img-362-style{
+		width:170px;
+	}
+	.h1-157-style{
+		margin-top:30px;
+	}
+	.h4-bloc-265-margin-top{
+		margin-top:20px;
+	}
+	.bloc-19746-margin-top{
+		margin-top:20px;
+	}
+	.card-bloc-4-margin-top{
+		margin-top:1px;
+	}
+	.bloc-productos-1-margin-top{
+		margin-top:25px;
+	}
+	.bloc-48110-margin-top{
+		margin-top:25px;
+	}
+	.bloc-45504-margin-top{
+		margin-top:24px;
+	}
+	.btn-7-style{
+		width:91.67%;
+	}
+	.p-bloc-7-margin-top{
+		margin-bottom:0px;
+	}
+	.bloc-13136-margin-top{
+		margin-top:24px;
+	}
+	.bloc-25262-margin-top{
+		margin-top:25px;
+	}
+	.bloc-18819-margin-top{
+		margin-top:25px;
+	}
+	.bloc-24488-margin-top{
+		margin-top:25px;
+	}
+	.bloc-20488-margin-top{
+		margin-top:25px;
+	}
+	.bloc-23366-margin-top{
+		margin-top:25px;
+	}
+	.bloc-38031-margin-top{
+		margin-top:24px;
+	}
+	.row-65-margin-bottom{
+		margin-top:0px;
+	}
+	.btn-9-style{
+		width:98.25%;
+	}
+	.card-body-productos-1-margin-top{
+		height:476px;
+	}
+	.bloc-bloc-180-margin-top{
+		margin-top:0px;
+	}
+	.p-cards-blog-margin-bottom{
+		margin-left:-31px;
+	}
+	.img-margin-right{
+		margin-left:0px;
+		margin-right:2px;
+	}
+	.label-label-style{
+		width:56.58%;
+	}
+	.container-div-cards-blog-style{
+		width:100%;
+	}
+	.container-div-margin-left{
+		margin-left:-26px;
+	}
+	.label-categoria-style{
+		width:100%;
+	}
+	.btn-247-style{
+		width:100%;
+	}
+	.btn-248-style{
+		width:100%;
+	}
+	.img-telefonos-head-style{
+		width:251px;
+	}
+	.btn-bloc-0-margin-top{
+		width:100%;
+	}
+	.txtcuerpo-copy-1{
+		padding-right:0px;
+		padding-bottom:0px;
+		margin-top:30px;
+		margin-left:0px;
+	}
+	.h1-bloc-4-margin-top{
+		margin-top:1px;
+	}
+	.p-bloc-4-style{
+		width:100%;
+	}
+	.txt-banner-withe{
+		font-size:25px;
+	}
+	.btn-bloc-78-margin-top{
+		margin-top:49px;
+	}
+	.banner-saladette:hover{
+		background-image:url("img/BANNER TOMATE SALADETTE MB 2.png");
+		background-size:auto 100%;
+	}
+	.banner-saladette{
+		background-image:url("img/BANNER TOMATE SALADETTE MB 2.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.btn-bloc-10-style{
+		padding-top:222px;
+		padding-bottom:222px;
+		background-image:url("img/Banner papaya mb.png");
+		width:100%;
+	}
+	.btn-bloc-10-style:hover{
+		background-image:url("img/Banner papaya mb.png");
+	}
+	.p-15-margin-bottom{
+		margin-top:30px;
+	}
+	.banner-fresa{
+		background-image:url("img/BANNER FRESA MB.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-fresa:hover{
+		background-image:url("img/BANNER FRESA MB.png");
+		background-size:auto 100%;
+	}
+	.banner-aguacate{
+		background-image:url("img/banner aguacate mb 2.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-aguacate:hover{
+		background-image:url("img/banner aguacate mb 2.png");
+		background-size:auto 100%;
+	}
+	.banner-cebolla{
+		background-image:url("img/banner cebolla mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-cebolla:hover{
+		background-image:url("img/banner cebolla mb.png");
+		background-size:auto 100%;
+	}
+	.banner-limon{
+		background-image:url("img/Banner limn mb 3.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-limon:hover{
+		background-image:url("img/Banner limn mb 3.png");
+		background-size:auto 100%;
+	}
+	.banner-jalapeño{
+		background-image:url("img/Banner jalapeño mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-jalapeño:hover{
+		background-image:url("img/Banner jalapeño mb.png");
+		background-size:auto 100%;
+	}
+	.banner-tomatillo{
+		background-image:url("img/Banner tomatillo mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-tomatillo:hover{
+		background-image:url("img/Banner tomatillo mb.png");
+		background-size:auto 100%;
+	}
+	.banner-platano{
+		background-image:url("img/Banner platano mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-platano:hover{
+		background-image:url("img/Banner platano mb.png");
+		background-size:auto 100%;
+	}
+	.banner-pepino{
+		background-image:url("img/banner pepino mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-pepino:hover{
+		background-image:url("img/banner pepino mb.png");
+		background-size:auto 100%;
+	}
+	.banner-ajo{
+		background-image:url("img/banner ajo mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-ajo:hover{
+		background-image:url("img/banner ajo mb.png");
+		background-size:auto 100%;
+	}
+	.banner-berenjena{
+		background-image:url("img/Banner berenjena mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-berenjena:hover{
+		background-image:url("img/Banner berenjena mb.png");
+		background-size:auto 100%;
+	}
+	.banner-cafe{
+		background-image:url("img/Banner cafe mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-cafe:hover{
+		background-image:url("img/Banner cafe mb.png");
+		background-size:auto 100%;
+	}
+	.banner-mango{
+		background-image:url("img/Banner mango mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-mango:hover{
+		background-image:url("img/Banner mango mb.png");
+		background-size:auto 100%;
+	}
+	.banner-papaya{
+		background-image:url("img/Banner papaya mb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-papaya:hover{
+		background-image:url("img/Banner papaya mb.png");
+		background-size:auto 100%;
+	}
+	.banner-miel{
+		background-image:url("img/Banner mielmb.png");
+		background-size:auto 100%;
+		background-color:transparent;
+	}
+	.banner-miel:hover{
+		background-image:url("img/Banner mielmb.png");
+		background-size:auto 100%;
+	}
+	
+}
+
